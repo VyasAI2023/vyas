@@ -14,7 +14,7 @@ const Cards = () => {
             alt="/"
           />
           <h2 className="text-2xl font-bold text-center py-8">Single User</h2>
-          <p className="text-center text-4xl font-bold">$149</p>
+          <p className="text-center text-4xl font-bold">&#8377 149</p>
           <div className="text-center font-medium">
             <p className="py-2 border-b mx-8 mt-8">500 GB Storage</p>
             <p className="py-2 border-b mx-8">1 Granted User</p>
@@ -31,7 +31,7 @@ const Cards = () => {
             alt="/"
           />
           <h2 className="text-2xl font-bold text-center py-8">Single User</h2>
-          <p className="text-center text-4xl font-bold">$149</p>
+          <p className="text-center text-4xl font-bold">&#8377 149</p>
           <div className="text-center font-medium">
             <p className="py-2 border-b mx-8 mt-8">500 GB Storage</p>
             <p className="py-2 border-b mx-8">1 Granted User</p>
@@ -48,7 +48,7 @@ const Cards = () => {
             alt="/"
           />
           <h2 className="text-2xl font-bold text-center py-8">Single User</h2>
-          <p className="text-center text-4xl font-bold">$149</p>
+          <p className="text-center text-4xl font-bold">&#8377 149</p>
           <div className="text-center font-medium">
             <p className="py-2 border-b mx-8 mt-8">500 GB Storage</p>
             <p className="py-2 border-b mx-8">1 Granted User</p>
