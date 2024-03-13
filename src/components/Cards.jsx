@@ -51,7 +51,7 @@ const Cards = () => {
           <p className="text-center text-4xl font-bold">&#8377 149</p>
           <div className="text-center font-medium">
             <p className="py-2 border-b mx-8 mt-8">500 GB Storage</p>
-            <p className="py-2 border-b mx-8">1 Granted User</p>
+            <p className="py-2 border-b mx-8">1 Granted Users</p>
             <p className="py-2 border-b mx-8">Send up to 2 GB</p>
           </div>
           <button className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3">
