@@ -1,15 +1,21 @@
-import MainBody from "./components/Body/MainBody";
-import ResponsiveFooter from "./components/Footer/ResponsiveFooter";
-import ResponsiveAppBar from "./components/Header/ResponsiveAppBar";
-import Counter from "./components/Counter/counter";
+import React from "react";
+import Analytics from "./components/Analytics";
+import Cards from "./components/Cards";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import Newsletter from "./components/Newsletter";
+
 function App() {
   return (
-    <>
-      {/* <ResponsiveAppBar />
-      <MainBody />
-      <ResponsiveFooter /> */}
-      <Counter />
-    </>
+    <div>
+      <Navbar />
+      <Hero />
+      <Analytics />
+      <Newsletter />
+      {/* <Cards /> */}
+      <Footer />
+    </div>
   );
 }
 
