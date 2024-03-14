@@ -1,21 +1,26 @@
 import React from "react";
-import Analytics from "./components/Analytics";
-import Cards from "./components/Cards";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Newsletter from "./components/Newsletter";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
 
+import MainBody from "./components/MainBody";
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <Analytics />
-      <Newsletter />
-      {/* <Cards /> */}
-      <Footer />
-    </div>
+    // <div>
+    //   <Navbar />
+    //   <Hero />
+    //   <Analytics />
+    //   <Newsletter />
+    //   {/* <Cards /> */}
+    //   <Footer />
+    // </div>
+    <Routes>
+      <Route path="/" element={<MainBody />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/company" element={<Home />} />
+      <Route path="/resources" element={<Home />} />
+      <Route path="/contact" element={<Home />} />
+      <Route path="/about" element={<Home />} />
+    </Routes>
   );
 }
 

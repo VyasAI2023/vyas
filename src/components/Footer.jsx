@@ -4,6 +4,7 @@ import {
   FaFacebookSquare,
   FaGithubSquare,
   FaInstagram,
+  FaLinkedin,
   FaTwitterSquare,
 } from "react-icons/fa";
 
@@ -14,16 +15,29 @@ const Footer = () => {
         <h1 className="w-full text-3xl font-bold text-[#00df9a]">Vyas.AI</h1>
         <p className="py-4">© 2024 Vyas.AI, Inc. All rights reserved.</p>
         <div className="flex justify-between md:w-[75%] my-6">
-          <FaFacebookSquare size={30} />
-          <FaInstagram size={30} />
-          <FaTwitterSquare size={30} />
-          <FaGithubSquare size={30} />
-          <FaDribbbleSquare size={30} />
+          <a
+            href="https://www.linkedin.com/in/vyas-ai-76217b279/"
+            target="_blank"
+          >
+            <FaLinkedin size={30} />
+          </a>
+          <a>
+            <FaTwitterSquare size={30} />
+          </a>
+          <a>
+            <FaGithubSquare size={30} />
+          </a>
+          <a>
+            <FaFacebookSquare size={30} />
+          </a>
+          <a>
+            <FaInstagram size={30} />
+          </a>
         </div>
       </div>
       <div className="lg:col-span-2 flex justify-between mt-6">
         <div>
-          <h6 className="font-medium text-gray-400">Solutions</h6>
+          <h6 className="font-medium text-[#00df9a]">Solutions</h6>
           <ul>
             <li className="py-2 text-sm">Analytics</li>
             <li className="py-2 text-sm">Marketing</li>
@@ -32,7 +46,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h6 className="font-medium text-gray-400">Support</h6>
+          <h6 className="font-medium text-[#00df9a]">Support</h6>
           <ul>
             <li className="py-2 text-sm">Pricing</li>
             <li className="py-2 text-sm">Documentation</li>
@@ -41,17 +55,16 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h6 className="font-medium text-gray-400">Company</h6>
+          <h6 className="font-medium text-[#00df9a]">Company</h6>
           <ul>
             <li className="py-2 text-sm">About</li>
             <li className="py-2 text-sm">Blog</li>
             <li className="py-2 text-sm">Jobs</li>
-            <li className="py-2 text-sm">Press</li>
             <li className="py-2 text-sm">Careers</li>
           </ul>
         </div>
         <div>
-          <h6 className="font-medium text-gray-400">Legal</h6>
+          <h6 className="font-medium text-[#00df9a]">Legal</h6>
           <ul>
             <li className="py-2 text-sm">Claim</li>
             <li className="py-2 text-sm">Policy</li>
