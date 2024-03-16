@@ -78,7 +78,7 @@ const Home = () => {
 
     // Create and add initial balls
     for (let i = 0; i < 100; i++) {
-      const radius = Math.random() * 5 + 2; // Smaller radius
+      const radius = Math.random() * 5 + 5; // Smaller radius
       const x = Math.random() * (canvas.width - 2 * radius) + radius;
       const y = Math.random() * (canvas.height - 2 * radius) + radius;
       const color = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
