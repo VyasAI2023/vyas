@@ -22,7 +22,7 @@ const Analytics = () => {
             metadata, train/test split, or location of image <br />
             Track multiple versions of datasets for experimentation. <br />
             Use text-based semantic search and CLIP vectors to find similar data
-            and anomalies
+            and anomalies.
           </p>
           <button className="bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3">
             Get Started
