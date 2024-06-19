@@ -1,9 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-
+import { Modelpage } from "./components/Modelpage";
 import MainBody from "./components/MainBody";
-import LoginSignupPage from "./components/LoginSignupPage";
+import Login from "./components/login";
+import Signup from "./components/Signup";
+import Profile from "./components/Profile";
+import Upload from "./components/Upload";
 function App() {
   return (
     // <div>
@@ -21,7 +24,11 @@ function App() {
       <Route path="/resources" element={<Home />} />
       <Route path="/contact" element={<Home />} />
       <Route path="/about" element={<Home />} />
-      <Route path="/signup" element={<LoginSignupPage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/Signup" element={<Signup/>}/>
+      <Route path="/Profile" element={<Profile/>}/>
+      <Route path="/Modelpage" element={<Modelpage/>}/>
+      <Route path="/Upload" element={<Upload/>}/>
     </Routes>
   );
 }
