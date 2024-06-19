@@ -30,6 +30,12 @@ const Navbar = () => {
         <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
           <Link to="/contact">Contact</Link>
         </li>
+        <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
+          <Link to="/login">Login</Link>
+        </li>
+        <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
+          <Link to="/Modelpage">Models</Link>
+        </li>
       </ul>
       <div onClick={handleNav} className="block md:hidden cursor-pointer">
         {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
