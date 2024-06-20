@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaDribbbleSquare,
   FaFacebookSquare,
@@ -39,36 +40,66 @@ const Footer = () => {
         <div>
           <h6 className="font-medium text-[#00df9a]">Solutions</h6>
           <ul>
-            <li className="py-2 text-sm">Analytics</li>
-            <li className="py-2 text-sm">Marketing</li>
-            <li className="py-2 text-sm">Commerce</li>
-            <li className="py-2 text-sm">Insights</li>
+            <li className="py-2 text-sm">
+              <Link to="/analytics">Analytics</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link to="/marketing">Marketing</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link to="/commerce">Commerce</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link to="/insights">Insights</Link>
+            </li>
           </ul>
         </div>
         <div>
           <h6 className="font-medium text-[#00df9a]">Support</h6>
           <ul>
-            <li className="py-2 text-sm">Pricing</li>
-            <li className="py-2 text-sm">Documentation</li>
-            <li className="py-2 text-sm">Guides</li>
-            <li className="py-2 text-sm">API Status</li>
+            <li className="py-2 text-sm">
+              <Link to="/pricing">Pricing</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link to="/documentation">Documentation</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link to="/guides">Guides</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link to="/api-status">API Status</Link>
+            </li>
           </ul>
         </div>
         <div>
           <h6 className="font-medium text-[#00df9a]">Company</h6>
           <ul>
-            <li className="py-2 text-sm">About</li>
-            <li className="py-2 text-sm">Blog</li>
-            <li className="py-2 text-sm">Jobs</li>
-            <li className="py-2 text-sm">Careers</li>
+            <li className="py-2 text-sm">
+              <Link to="/company/about">About</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link to="/blog">Blog</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link to="/jobs">Jobs</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link to="/careers">Careers</Link>
+            </li>
           </ul>
         </div>
         <div>
           <h6 className="font-medium text-[#00df9a]">Legal</h6>
           <ul>
-            <li className="py-2 text-sm">Claim</li>
-            <li className="py-2 text-sm">Policy</li>
-            <li className="py-2 text-sm">Terms</li>
+            <li className="py-2 text-sm">
+              <Link to="/claim">Claim</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link to="/policy">Policy</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link to="/terms">Terms</Link>
+            </li>
           </ul>
         </div>
       </div>
