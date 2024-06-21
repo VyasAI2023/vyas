@@ -9,6 +9,13 @@ import Profile from "./components/Profile";
 import Upload from "./components/Upload";
 import Contact from "./components/Contact";
 import About from "./components/company/About";
+import Blog from "./components/company/Blog";
+import Pricing from "./components/Pricing";
+import Blog1 from "./components/company/Blog1";
+import Career from "./components/company/Career";
+import Jobs from "./components/company/Jobs";
+import Policy from "./components/Policy";
+import Terms from "./components/Terms";
 function App() {
   return (
     // <div>
@@ -30,6 +37,13 @@ function App() {
       <Route path="/Modelpage" element={<Modelpage/>}/>
       <Route path="/Upload" element={<Upload/>}/>
       <Route path="/company/About" element={<About />} />
+      <Route path="/company/blog" element={<Blog />} />
+      <Route path="/pricing" element={<Pricing/>}/>
+      <Route path="/company/Blog1" element={<Blog1/>}/>
+      <Route path="/company/careers" element={<Career/>}/>      
+      <Route path="/company/jobs" element={<Jobs/>}/>
+      <Route path="/policy" element={<Policy/>}/>
+      <Route path="/terms" element={<Terms/>}/>
       </Routes>
   );
 }
