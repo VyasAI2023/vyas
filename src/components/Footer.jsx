@@ -44,7 +44,7 @@ const Footer = () => {
               <Link to="/analytics">Analytics</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/marketing">Marketing</Link>
+              <Link to="/modelpage">Models</Link>
             </li>
             <li className="py-2 text-sm">
               <Link to="/commerce">Commerce</Link>
@@ -78,13 +78,13 @@ const Footer = () => {
               <Link to="/company/about">About</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/blog">Blog</Link>
+              <Link to="/company/blog">Blog</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/jobs">Jobs</Link>
+              <Link to="/company/jobs">Jobs</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/careers">Careers</Link>
+              <Link to="/company/careers">Careers</Link>
             </li>
           </ul>
         </div>
