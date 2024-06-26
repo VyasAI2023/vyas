@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Papa from 'papaparse';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import './Upload.css'; // Ensure Upload.css is imported for styling
 
 function Upload() {
@@ -64,6 +65,7 @@ function Upload() {
           </tbody>
         </table>
       </div>
+      <Footer/>
     </div>
   );
 }
