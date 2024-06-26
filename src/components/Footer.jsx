@@ -9,6 +9,13 @@ import {
   FaTwitterSquare,
 } from "react-icons/fa";
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
+
 const Footer = () => {
   return (
     <div className="max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300">
@@ -19,6 +26,7 @@ const Footer = () => {
           <a
             href="https://www.linkedin.com/in/vyas-ai-76217b279/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <FaLinkedin size={30} />
           </a>
@@ -41,16 +49,16 @@ const Footer = () => {
           <h6 className="font-medium text-[#00df9a]">Solutions</h6>
           <ul>
             <li className="py-2 text-sm">
-              <Link to="/analytics">Analytics</Link>
+              <Link to="https://vyasai.cronitorstatus.com/" onClick={scrollToTop}>Analytics</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/modelpage">Models</Link>
+              <Link onClick={scrollToTop} to="/modelpage" >Models</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/commerce">Commerce</Link>
+              <Link onClick={scrollToTop} to="/store" >Commerce</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/insights">Insights</Link>
+              <Link onClick={scrollToTop} to="/company/blog" >Blog</Link>
             </li>
           </ul>
         </div>
@@ -58,16 +66,16 @@ const Footer = () => {
           <h6 className="font-medium text-[#00df9a]">Support</h6>
           <ul>
             <li className="py-2 text-sm">
-              <Link to="/pricing">Pricing</Link>
+              <Link onClick={scrollToTop} to="/pricing" >Pricing</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/documentation">Documentation</Link>
+              <Link onClick={scrollToTop} to="/documentation" >Documentation</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/guides">Guides</Link>
+              <Link onClick={scrollToTop} to="/guides" >Guides</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/api-status">API Status</Link>
+              <Link onClick={scrollToTop} to="/login" >Sign in/Sign up</Link>
             </li>
           </ul>
         </div>
@@ -75,16 +83,16 @@ const Footer = () => {
           <h6 className="font-medium text-[#00df9a]">Company</h6>
           <ul>
             <li className="py-2 text-sm">
-              <Link to="/company/about">About</Link>
+              <Link onClick={scrollToTop} to="/company/about" >About</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/company/blog">Blog</Link>
+              <Link onClick={scrollToTop} to="/contact" >Contact Us</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/company/jobs">Jobs</Link>
+              <Link onClick={scrollToTop} to="/company/jobs" >Jobs</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/company/careers">Careers</Link>
+              <Link onClick={scrollToTop} to="/company/careers" >Careers</Link>
             </li>
           </ul>
         </div>
@@ -92,13 +100,13 @@ const Footer = () => {
           <h6 className="font-medium text-[#00df9a]">Legal</h6>
           <ul>
             <li className="py-2 text-sm">
-              <Link to="/claim">Claim</Link>
+              <Link onClick={scrollToTop} to="/claim" >Claim</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/policy">Policy</Link>
+              <Link onClick={scrollToTop} to="/policy" >Policy</Link>
             </li>
             <li className="py-2 text-sm">
-              <Link to="/terms">Terms</Link>
+              <Link onClick={scrollToTop} to="/terms" >Terms</Link>
             </li>
           </ul>
         </div>
