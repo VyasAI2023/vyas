@@ -78,10 +78,10 @@ const Navbar = () => {
                 Blog
               </Link>
               <Link
-                to="/resources/guides"
+                to="/documentation"
                 className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
               >
-                Guides
+                Documentation
               </Link>
               <Link
                 to="/modelpage"
@@ -132,10 +132,10 @@ const Navbar = () => {
                 Blog
               </Link>
               <Link
-                to="/resources/guides"
+                to="/documentation"
                 className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
               >
-                Guides
+                Documentation
               </Link>
               <Link
                 to="/modelpage"
