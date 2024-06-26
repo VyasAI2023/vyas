@@ -16,6 +16,9 @@ import Career from "./components/company/Career";
 import Jobs from "./components/company/Jobs";
 import Policy from "./components/Policy";
 import Terms from "./components/Terms";
+import Documentation from "./components/Documentation";
+import StatusPage from "./components/StatusPage";
+import Store from "./components/Store";
 function App() {
   return (
     // <div>
@@ -44,6 +47,9 @@ function App() {
       <Route path="/company/jobs" element={<Jobs/>}/>
       <Route path="/policy" element={<Policy/>}/>
       <Route path="/terms" element={<Terms/>}/>
+      <Route path="/documentation" element={<Documentation/>}/>
+      <Route path="/status" element={<StatusPage/>}/>
+      <Route path="/store" element={<Store/>}/>
       </Routes>
   );
 }
