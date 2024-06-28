@@ -11,6 +11,9 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (name === 'phone' && (isNaN(value) || value.length > 10)) {
+      return;
+    }
     setFormData({
       ...formData,
       [name]: value
@@ -22,6 +25,7 @@ const Contact = () => {
     // Handle form submission logic here
     console.log(formData);
   };
+
 
   return (
     <div>
@@ -56,6 +60,19 @@ const Contact = () => {
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#00df9a] focus:border-[#00df9a] sm:text-sm"
           />
         </div>
+        <div>
+      <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone*</label>
+      <input
+        type="text"
+        id="phone"
+        name="phone"
+        value={formData.phone}
+        onChange={handleChange}
+        maxLength="10"
+        required
+        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#00df9a] focus:border-[#00df9a] sm:text-sm"
+      />
+    </div>
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message*</label>
           <textarea
