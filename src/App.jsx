@@ -19,6 +19,7 @@ import Terms from "./components/Terms";
 import Documentation from "./components/Documentation";
 import StatusPage from "./components/StatusPage";
 import Store from "./components/Store";
+import Guide from "./components/Guide";
 function App() {
   return (
     // <div>
@@ -50,6 +51,7 @@ function App() {
       <Route path="/documentation" element={<Documentation/>}/>
       <Route path="/status" element={<StatusPage/>}/>
       <Route path="/store" element={<Store/>}/>
+      <Route path="/guide" element={<Guide/>}/>
       </Routes>
   );
 }
