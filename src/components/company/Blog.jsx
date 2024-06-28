@@ -46,7 +46,7 @@ export const Blog = () => {
             </Typography>
         </CardContent>
           <CardActions sx={{ justifyContent: 'center' }}>
-          <a class="flex items-center mt-auto text-[13px] text-black" href="/blog1">
+          <a class="flex items-center mt-auto text-[13px] text-black" href="/company/blog1">
             Read More
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -77,7 +77,7 @@ export const Blog = () => {
             </Typography>
         </CardContent>
           <CardActions sx={{ justifyContent: 'center' }}>
-          <a class="flex items-center mt-auto text-[13px] text-black" href="/blog1">
+          <a class="flex items-center mt-auto text-[13px] text-black" href="/company/blog1">
             Read More
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -108,7 +108,7 @@ export const Blog = () => {
             </Typography>
         </CardContent>
           <CardActions sx={{ justifyContent: 'center' }}>
-          <a class="flex items-center mt-auto text-[13px] text-black" href="/blog1">
+          <a class="flex items-center mt-auto text-[13px] text-black" href="/company/blog1">
             Read More
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
