@@ -1,7 +1,21 @@
 import React from "react";
 import Laptop from "../assets/laptop.jpg";
+import { useNavigate } from "react-router-dom";
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
+
 
 const Analytics = () => {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/login');
+  };
   return (
     <div className="w-full bg-white py-16 px-4">
       <div className="max-w-[1240px] mx-auto grid md:grid-cols-2">
@@ -24,7 +38,7 @@ const Analytics = () => {
             Use text-based semantic search and CLIP vectors to find similar data
             and anomalies.
           </p>
-          <button className="bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3">
+          <button className="bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3" onClick={() => {scrollToTop(); handleGetStarted();}}>
             Get Started
           </button>
         </div>

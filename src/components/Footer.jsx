@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaDribbbleSquare,
   FaFacebookSquare,
@@ -7,6 +8,13 @@ import {
   FaLinkedin,
   FaTwitterSquare,
 } from "react-icons/fa";
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
 
 const Footer = () => {
   return (
@@ -18,6 +26,7 @@ const Footer = () => {
           <a
             href="https://www.linkedin.com/in/vyas-ai-76217b279/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <FaLinkedin size={30} />
           </a>
@@ -39,36 +48,66 @@ const Footer = () => {
         <div>
           <h6 className="font-medium text-[#00df9a]">Solutions</h6>
           <ul>
-            <li className="py-2 text-sm">Analytics</li>
-            <li className="py-2 text-sm">Marketing</li>
-            <li className="py-2 text-sm">Commerce</li>
-            <li className="py-2 text-sm">Insights</li>
+            <li className="py-2 text-sm">
+              <Link to="https://vyasai.cronitorstatus.com/" onClick={scrollToTop}>Analytics</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/modelpage" >Models</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/store" >Commerce</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/company/blog" >Blog</Link>
+            </li>
           </ul>
         </div>
         <div>
           <h6 className="font-medium text-[#00df9a]">Support</h6>
           <ul>
-            <li className="py-2 text-sm">Pricing</li>
-            <li className="py-2 text-sm">Documentation</li>
-            <li className="py-2 text-sm">Guides</li>
-            <li className="py-2 text-sm">API Status</li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/pricing" >Pricing</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/documentation" >Documentation</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/guide" >Guides</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/login" >Sign in/Sign up</Link>
+            </li>
           </ul>
         </div>
         <div>
           <h6 className="font-medium text-[#00df9a]">Company</h6>
           <ul>
-            <li className="py-2 text-sm">About</li>
-            <li className="py-2 text-sm">Blog</li>
-            <li className="py-2 text-sm">Jobs</li>
-            <li className="py-2 text-sm">Careers</li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/company/about" >About</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/contact" >Contact Us</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/company/jobs" >Jobs</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/company/careers" >Careers</Link>
+            </li>
           </ul>
         </div>
         <div>
           <h6 className="font-medium text-[#00df9a]">Legal</h6>
           <ul>
-            <li className="py-2 text-sm">Claim</li>
-            <li className="py-2 text-sm">Policy</li>
-            <li className="py-2 text-sm">Terms</li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/claim" >Claim</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/policy" >Policy</Link>
+            </li>
+            <li className="py-2 text-sm">
+              <Link onClick={scrollToTop} to="/terms" >Terms</Link>
+            </li>
           </ul>
         </div>
       </div>

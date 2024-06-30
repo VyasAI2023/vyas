@@ -1,4 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
+
 
 const Newsletter = () => {
   return (
@@ -23,7 +32,7 @@ const Newsletter = () => {
           </div>
           <p>
             We care bout the protection of your data. Read our{" "}
-            <span className="text-[#00df9a]">Privacy Policy.</span>
+            <Link onClick={scrollToTop} to='/policy' className="text-[#00df9a]">Privacy Policy.</Link>
           </p>
         </div>
       </div>

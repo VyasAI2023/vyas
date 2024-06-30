@@ -4,13 +4,28 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const [showCompanyCard, setShowCompanyCard] = useState(false);
+  const [showResourcesCard, setShowResourcesCard] = useState(false);
+  const [showModelCard, setShowModelCard] = useState(false);
 
   const handleNav = () => {
     setNav(!nav);
   };
 
+  const handleCompanyCard = () => {
+    setShowCompanyCard(!showCompanyCard);
+  };
+
+  const handleResourcesCard = () => {
+    setShowResourcesCard(!showResourcesCard);
+  };
+
+  const handleModelCard = () => {
+    setShowModelCard(!showModelCard);
+  };
+
   return (
-    <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
+    <div className="relative flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
       <h1 className="w-full text-3xl font-bold text-[#00df9a]">
         <Link to="/">Vyas.AI</Link>
       </h1>
@@ -18,17 +33,73 @@ const Navbar = () => {
         <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
           <Link to="/">Home</Link>
         </li>
-        <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
-          <Link to="/company">Company</Link>
+        <li
+          className="p-4 cursor-pointer hover:text-gray-500 hover:underline relative"
+          onMouseEnter={handleCompanyCard}
+          onMouseLeave={handleCompanyCard}
+        >
+          <Link to="">Company</Link>
+          {showCompanyCard && (
+            <div className="absolute left-0 mt-2 w-48 bg-white text-black p-4 shadow-lg rounded">
+              <Link
+                to="/company/About"
+                className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
+              >
+                About Us
+              </Link>
+              
+              <Link
+                to="/company/jobs"
+                className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
+              >
+                Jobs
+              </Link>
+              <Link
+                to="/company/careers"
+                className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
+              >
+                Careers
+              </Link>
+            </div>
+          )}
         </li>
-        <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
-          <Link to="/resources">Resources</Link>
-        </li>
-        <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
-          <Link to="/about">About</Link>
+        <li
+          className="p-4 cursor-pointer hover:text-gray-500 hover:underline relative"
+          onMouseEnter={handleResourcesCard}
+          onMouseLeave={handleResourcesCard}
+        >
+          <Link to="">Resources</Link>
+          {showResourcesCard && (
+            <div className="absolute left-0 mt-2 w-48 bg-white text-black p-4 shadow-lg rounded">
+              <Link
+                to="/company/blog"
+                className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
+              >
+                Blog
+              </Link>
+              <Link
+                to="/documentation"
+                className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
+              >
+                Documentation
+              </Link>
+              <Link
+                to="/modelpage"
+                className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
+              >
+                Models
+              </Link>
+            </div>
+          )}
         </li>
         <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
           <Link to="/contact">Contact</Link>
+        </li>
+        <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
+          <Link to="/pricing">Pricing</Link>
+        </li>
+        <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
+          <Link to="/login">Login</Link>
         </li>
       </ul>
       <div onClick={handleNav} className="block md:hidden cursor-pointer">
@@ -44,20 +115,73 @@ const Navbar = () => {
         <h1 className="w-full text-3xl font-bold text-[#00df9a] m-4">
           Vyas.AI
         </h1>
-        <li className="p-4 border-b border-gray-600 cursor-pointer hover:bg-[#00df9a] hover:text-gray-800">
+        <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
           <Link to="/">Home</Link>
         </li>
-        <li className="p-4 border-b border-gray-600 cursor-pointer hover:bg-[#00df9a] hover:text-gray-800">
-          <Link to="/company">Company</Link>
+        <li
+          className="p-4 cursor-pointer hover:text-gray-500 hover:underline relative "
+          onClick={handleResourcesCard}
+        >
+          <Link to="">Resources</Link>
+          {showResourcesCard && (
+            <div className="absolute left-0 mt-2 w-48 bg-white text-black p-4 shadow-lg rounded">
+              <Link
+                to="/company/blog"
+                className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
+              >
+                Blog
+              </Link>
+              <Link
+                to="/documentation"
+                className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
+              >
+                Documentation
+              </Link>
+              <Link
+                to="/modelpage"
+                className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
+              >
+                Models
+              </Link>
+            </div>
+          )}
         </li>
-        <li className="p-4 border-b border-gray-600 cursor-pointer hover:bg-[#00df9a] hover:text-gray-800">
-          <Link to="/resources">Resources</Link>
-        </li>
-        <li className="p-4 border-b border-gray-600 cursor-pointer hover:bg-[#00df9a] hover:text-gray-800">
-          <Link to="/about">About</Link>
-        </li>
-        <li className="p-4 cursor-pointer hover:bg-[#00df9a] hover:text-gray-600">
+        <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
           <Link to="/contact">Contact</Link>
+        </li>
+        <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
+          <Link to="/pricing">Pricing</Link>
+        </li>
+        <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
+          <Link to="/login">Login</Link>
+        </li>
+        <li
+          className="p-4 cursor-pointer hover:text-gray-500 hover:underline relative"
+          onClick={handleCompanyCard}
+        >
+          <Link to="">Company</Link>
+          {showCompanyCard && (
+            <div className="absolute left-0 mt-2 w-48 bg-white text-black p-4 shadow-lg rounded width:100%">
+              <Link
+                to="/company/About"
+                className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/company/jobs"
+                className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
+              >
+                Jobs
+              </Link>
+              <Link
+                to="/company/careers"
+                className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
+              >
+                Careers
+              </Link>
+            </div>
+          )}
         </li>
       </ul>
     </div>
