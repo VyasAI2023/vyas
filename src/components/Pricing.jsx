@@ -12,7 +12,7 @@ const Pricing = () => {
         <div className='text'>Pricing</div>
         <div className='underline'></div>
       </div>
-      <div className="relative rounded-[50px] border p-11 max-lg:px-3 bg-white m-20">
+      <div className="relative rounded-[50px] border p-11 max-lg:px-3 bg-white m-5">
         
         <div className="lqd-tabs text-center">
           <div className="lqd-tabs-triggers mx-auto mb-9 inline-flex flex-wrap gap-2 rounded-md border text-[15px] font-medium leading-none">
