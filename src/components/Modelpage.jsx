@@ -12,119 +12,77 @@ import { useNavigate } from 'react-router-dom';
 export const Modelpage = () => {
   const navigate = useNavigate();
 
-  const handleSelect = () => {
-    navigate('/upload');
+  const handleSelect = (model) => {
+    navigate(`/upload?model=${model}`);
   };
 
+  const models = [
+    {
+      name: 'Model1: ',
+      image: 'https://i.imgur.com/165aGhQ.jpeg',
+      description: 'This model is designed for ...'
+    },
+    {
+      name: 'Model2: ',
+      image: 'https://i.imgur.com/165aGhQ.jpeg',
+      description: 'This model excels in ...'
+    },
+    {
+      name: 'Model3: ',
+      image: 'https://i.imgur.com/165aGhQ.jpeg',
+      description: 'This model is best suited for ...'
+    }
+  ];
+
   return (
-    <div className='container'>
+    <div className='container mx-auto px-4'>
       <Navbar />
-      <div className='header'>
+      <div className='header text-center my-8'>
         <div className='text'>Models</div>
-        <div className='underline'></div><br/><br/>
+        <div className='underline'></div>
       </div>
-      <div className='card-container' style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
-        <Card sx={{ maxWidth: 345 }}>
-          <CardMedia
-            component="img"
-            height="140"
-            image="https://i.imgur.com/165aGhQ.jpeg"
-            alt="Model Image"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Model1
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              About the model
-            </Typography>
-          </CardContent>
-          <CardActions sx={{ justifyContent: 'center' }}>
-            <Button
-              variant="contained"
-              size="small"
-              sx={{
-                backgroundColor: 'rgb(0, 223, 154)',
-                color:'black',
-                borderRadius: '.375rem', 
-                '&:hover': {
-                  backgroundColor: 'rgb(0, 183, 124)', 
-                },
-              }}
-              onClick={handleSelect}
-            >
-              Select
-            </Button>
-          </CardActions>
-        </Card>
-        <Card sx={{ maxWidth: 345 }}>
-          <CardMedia
-            component="img"
-            height="140"
-            image="https://i.imgur.com/165aGhQ.jpeg"
-            alt="Model Image"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Model2
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              About the model
-            </Typography>
-          </CardContent>
-          <CardActions sx={{ justifyContent: 'center' }}>
-            <Button
-              variant="contained"
-              size="small"
-              sx={{
-                backgroundColor: 'rgb(0, 223, 154)',
-                color:'black',
-                borderRadius: '.375rem', 
-                '&:hover': {
-                  backgroundColor: 'rgb(0, 183, 124)', 
-                },
-              }}
-              onClick={handleSelect}
-            >
-              Select
-            </Button>
-          </CardActions>
-        </Card>
-        <Card sx={{ maxWidth: 345 }}>
-          <CardMedia
-            component="img"
-            height="140"
-            image="https://i.imgur.com/165aGhQ.jpeg"
-            alt="Model Image"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Model3
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              About the model
-            </Typography>
-          </CardContent>
-          <CardActions sx={{ justifyContent: 'center' }}>
-            <Button
-              variant="contained"
-              size="small"
-              sx={{
-                backgroundColor: 'rgb(0, 223, 154)',
-                color:'black',
-                borderRadius: '.375rem',
-                '&:hover': {
-                  backgroundColor: 'rgb(0, 183, 124)', 
-                },
-              }}
-              onClick={handleSelect}
-            >
-              Select
-            </Button>
-          </CardActions>
-        </Card>
-      </div><br/><br/><br/>
-      <Footer/>
+      <div className='card-container flex flex-wrap justify-center gap-4'>
+        {models.map((model, index) => (
+          <Card className='max-w-xs rounded-xl' key={index}>
+            <CardMedia
+              component="img"
+              height="140"
+              image={model.image}
+              alt={`Model ${index + 1} Image`}
+            />
+            <CardContent className='pt-0'>
+              <Typography gutterBottom variant="h5" component="div">
+                {model.name}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {model.description}
+              </Typography>
+            </CardContent>
+            <CardActions className='justify-center'>
+              <Button
+                className="flex items-center mt-auto text-[13px] text-black"
+                variant="contained"
+                onClick={() => handleSelect(model.name)}
+                sx={{
+                  backgroundColor: 'rgb(0, 223, 154)',
+                  color: 'black',
+                  borderRadius: '.375rem',
+                  '&:hover': {
+                    backgroundColor: 'rgb(0, 183, 124)',
+                  },
+                }}
+              >
+                Select
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M9 6l6 6l-6 6"></path>
+                </svg>
+              </Button>
+            </CardActions>
+          </Card>
+        ))}
+      </div>
+      <Footer />
     </div>
   );
 };
