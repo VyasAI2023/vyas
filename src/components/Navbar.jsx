@@ -40,14 +40,13 @@ const Navbar = () => {
         >
           <Link to="">Company</Link>
           {showCompanyCard && (
-            <div className="absolute left-0 mt-2 w-48 bg-white text-black p-4 shadow-lg rounded">
+            <div className="absolute left-0 mt-2 w-48 bg-white text-black p-4 shadow-lg rounded z-50">
               <Link
                 to="/company/About"
                 className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
               >
                 About Us
               </Link>
-              
               <Link
                 to="/company/jobs"
                 className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
@@ -70,7 +69,7 @@ const Navbar = () => {
         >
           <Link to="">Resources</Link>
           {showResourcesCard && (
-            <div className="absolute left-0 mt-2 w-48 bg-white text-black p-4 shadow-lg rounded">
+            <div className="absolute left-0 mt-2 w-48 bg-white text-black p-4 shadow-lg rounded z-50">
               <Link
                 to="/company/blog"
                 className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
@@ -102,14 +101,14 @@ const Navbar = () => {
           <Link to="/login">Login</Link>
         </li>
       </ul>
-      <div onClick={handleNav} className="block md:hidden cursor-pointer">
+      <div onClick={handleNav} className="block md:hidden cursor-pointer z-50">
         {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
       </div>
       <ul
         className={
           nav
-            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
-            : "ease-in-out duration-500 fixed left-[-100%]"
+            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 z-40"
+            : "ease-in-out duration-500 fixed left-[-100%] z-40"
         }
       >
         <h1 className="w-full text-3xl font-bold text-[#00df9a] m-4">
@@ -119,12 +118,12 @@ const Navbar = () => {
           <Link to="/">Home</Link>
         </li>
         <li
-          className="p-4 cursor-pointer hover:text-gray-500 hover:underline relative "
+          className="p-4 cursor-pointer hover:text-gray-500 hover:underline relative"
           onClick={handleResourcesCard}
         >
           <Link to="">Resources</Link>
           {showResourcesCard && (
-            <div className="absolute left-0 mt-2 w-48 bg-white text-black p-4 shadow-lg rounded">
+            <div className="absolute left-0 mt-2 w-48 bg-white text-black p-4 shadow-lg rounded z-50">
               <Link
                 to="/company/blog"
                 className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
@@ -161,7 +160,7 @@ const Navbar = () => {
         >
           <Link to="">Company</Link>
           {showCompanyCard && (
-            <div className="absolute left-0 mt-2 w-48 bg-white text-black p-4 shadow-lg rounded width:100%">
+            <div className="absolute left-0 mt-2 w-48 bg-white text-black p-4 shadow-lg rounded z-50">
               <Link
                 to="/company/About"
                 className="block p-2 text-[rgb(0,223,154)] hover:bg-gray-200 rounded"
