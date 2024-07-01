@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -20,7 +21,7 @@ export const Modelpage = () => {
       <Navbar />
       <div className='header'>
         <div className='text'>Models</div>
-        <div className='underline'></div>
+        <div className='underline'></div><br/><br/>
       </div>
       <div className='card-container' style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
         <Card sx={{ maxWidth: 345 }}>
@@ -122,7 +123,8 @@ export const Modelpage = () => {
             </Button>
           </CardActions>
         </Card>
-      </div>
+      </div><br/><br/><br/>
+      <Footer/>
     </div>
   );
 };
