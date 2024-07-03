@@ -20,6 +20,10 @@ import Documentation from "./components/Documentation";
 import StatusPage from "./components/StatusPage";
 import Store from "./components/Store";
 import Guide from "./components/Guide";
+import LogisticRegression from "./LogisticRegression";
+import DecisionTree from "./DecisionTree";
+import SupportVectorMachine from "./SupportVectorMachine";
+import KNearestNeighbors from "./KNearestNeighbors";
 function App() {
   return (
     // <div>
@@ -52,6 +56,10 @@ function App() {
       <Route path="/status" element={<StatusPage/>}/>
       <Route path="/store" element={<Store/>}/>
       <Route path="/guide" element={<Guide/>}/>
+      <Route path="/logisticregression" element={<LogisticRegression/>}/>
+      <Route path="/decisiontree" element={<DecisionTree/>}/>
+      <Route path="/supportvectormachine" element={<SupportVectorMachine/>}/>
+      <Route path="/knearestneighbors" element={<KNearestNeighbors/>}/>
       </Routes>
   );
 }
