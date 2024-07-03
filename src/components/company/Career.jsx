@@ -160,7 +160,7 @@ const Career = () => {
                   className="bg-[#00df9a] rounded-md font-medium my-6 py-4 px-10 text-black text-center mt-4"
                 >
                   See
-                </a>
+                </a><br/><br/>
               </div>
             </div>
           </div>
