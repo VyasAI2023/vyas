@@ -20,6 +20,7 @@ import Documentation from "./components/Documentation";
 import StatusPage from "./components/StatusPage";
 import Store from "./components/Store";
 import Guide from "./components/Guide";
+import Claim from "./components/Claim";
 function App() {
   return (
     // <div>
@@ -52,7 +53,9 @@ function App() {
       <Route path="/status" element={<StatusPage/>}/>
       <Route path="/store" element={<Store/>}/>
       <Route path="/guide" element={<Guide/>}/>
+      <Route path="/claim" element={<Claim/>}/>
       </Routes>
+      
   );
 }
 
