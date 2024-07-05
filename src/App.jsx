@@ -24,6 +24,11 @@ import LogisticRegression from "./LogisticRegression";
 import DecisionTree from "./DecisionTree";
 import SupportVectorMachine from "./SupportVectorMachine";
 import KNearestNeighbors from "./KNearestNeighbors";
+import ModelLogisticRegression from "./components/ModelLogisticRegression";
+import ModelDecisionTree from "./components/ModelDecisionTree";
+import ModelSupportVectorMachine from "./components/ModelSupportVectorMachine";
+import ModelKNearestNeighbors from "./components/ModelKNearestNeighbors";
+import Blog2 from "./components/company/Blog2";
 function App() {
   return (
     // <div>
@@ -48,6 +53,7 @@ function App() {
       <Route path="/company/blog" element={<Blog />} />
       <Route path="/pricing" element={<Pricing/>}/>
       <Route path="/company/blog1" element={<Blog1/>}/>
+      <Route path="/company/blog2" element={<Blog2/>}/>
       <Route path="/company/careers" element={<Career/>}/>      
       <Route path="/company/jobs" element={<Jobs/>}/>
       <Route path="/policy" element={<Policy/>}/>
@@ -60,6 +66,10 @@ function App() {
       <Route path="/decisiontree" element={<DecisionTree/>}/>
       <Route path="/supportvectormachine" element={<SupportVectorMachine/>}/>
       <Route path="/knearestneighbors" element={<KNearestNeighbors/>}/>
+      <Route path='/modellogisticregression' element={<ModelLogisticRegression/>}/>
+      <Route path='/modeldecisiontree' element={<ModelDecisionTree/>}/>
+      <Route path='/modelsupportvectormachine' element={<ModelSupportVectorMachine/>}/>
+      <Route path='/modelknearestneighbors' element={<ModelKNearestNeighbors/>}/>
       </Routes>
   );
 }

@@ -1,14 +1,13 @@
 import React from 'react';
 import Navbar from './Navbar';
-import Footer from "./Footer";
+import Footer from './Footer';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-import { colors } from '@mui/material';
 import { keyframes } from '@emotion/react';
+import styled from '@emotion/styled';
 
 const fadeInUp = keyframes`
   from {
@@ -21,199 +20,199 @@ const fadeInUp = keyframes`
   }
 `;
 
+const StyledCard = styled(Card)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  transition: transform 0.3s ease;
+  position: relative; /* Add position relative for pseudo-element */
+  overflow: hidden; /* Ensure overflow is hidden for glow effect */
+  border-radius: 10px; /* Adjust border radius as needed */
+  border: 2px solid transparent; /* Initially transparent border */
+  &:hover {
+    transform: scale(1.05); /* Scale up by 10% */
+    z-index: 1.1;
+    border-color: rgba(0, 223, 154, 0.8); /* Glow color on hover */
+    box-shadow: 0 0 20px rgba(0, 223, 154, 0.8); /* Optional: Add a box-shadow for more glow effect */
+  }
+`;
+
+const TrainButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
+
 const Profile = () => {
   const models = [
     {
       name: 'Linear Regression',
-      description: 'A linear approach to modeling the relationship between a dependent variable and one or more independent variables, where the prediction is a continuous value.'
+      description: 'Predict continuous values based on independent variables using a straight-line relationship.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=fuVH5gdie8Za&format=png&color=000000',
     },
     {
       name: 'Logistic Regression',
-      description: 'A statistical method used for binary classification that models the probability of a target variable being one of two possible outcomes based on one or more predictor variables.',
+      description: 'Classify data into binary outcomes by modeling probabilities based on predictor variables.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=xCl8pA8G18Wt&format=png&color=000000',
       link: '/logisticregression'
     },
     {
       name: 'Decision Tree',
-      description: 'A decision support tool that uses a tree-like model of decisions and their possible consequences.',
+      description: 'Make decisions by visualizing a tree-like structure of possible choices and outcomes.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=3QpOTWDqiqQU&format=png&color=000000',
       link: '/decisiontree'
     },
     {
       name: 'Random Forest',
-      description: 'An ensemble learning method that operates by constructing multiple decision trees.'
+      description: 'Combine multiple decision trees to improve accuracy and avoid overfitting.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=97384&format=png&color=000000'
     },
     {
       name: 'Support Vector Machine (SVM)',
-      description: 'A supervised learning model used for classification and regression analysis.',
+      description: 'Classify data by finding the best hyperplane that separates different classes.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=6nsw3h9gk8M8&format=png&color=000000',
       link: '/supportvectormachine'
     },
     {
       name: 'K-Nearest Neighbors (KNN)',
-      description: 'A non-parametric method used for classification and regression by comparing distances between points.',
+      description: 'Classify objects based on their similarity to neighboring examples in a feature space.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=44804&format=png&color=000000',
       link: '/knearestneighbors'
     },
     {
       name: 'Naive Bayes',
-      description: 'A family of simple probabilistic classifiers based on applying Bayes\' theorem.'
+      description: 'Use probabilities and Bayes\' theorem to predict the class of an object based on its attributes.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=PvvcWRWxRKSR&format=png&color=000000'
     },
     {
       name: 'Principal Component Analysis (PCA)',
-      description: 'A technique for reducing the dimensionality of datasets, increasing interpretability but at the same time minimizing information loss.'
+      description: 'Reduce the complexity of high-dimensional data while retaining its essential features.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=yjSFO4TGzhsn&format=png&color=000000'
     },
     {
       name: 'Gradient Boosting Machines (GBM)',
-      description: 'A machine learning technique for regression and classification problems, which builds a model in a stage-wise fashion.'
+      description: 'Build predictive models by combining the outputs of many weak learners in a sequential manner.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=JSnLFBKCt9En&format=png&color=000000'
     },
     {
       name: 'Neural Networks (Deep Learning)',
-      description: 'A set of algorithms, modeled loosely after the human brain, designed to recognize patterns.'
+      description: 'Mimic the human brain to recognize patterns and make decisions based on vast amounts of data.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=kHa374LPzAvu&format=png&color=228BE6'
     },
     {
       name: 'Convolutional Neural Networks (CNN)',
-      description: 'A class of deep neural networks, most commonly applied to analyzing visual imagery.'
+      description: 'Specialize in processing and analyzing visual data such as images and videos.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=QlqmfUp2xkCq&format=png&color=000000'
     },
     {
       name: 'Recurrent Neural Networks (RNN)',
-      description: 'A class of artificial neural networks where connections between nodes can create a cycle, allowing output from some nodes to affect subsequent input to the same nodes.'
+      description: 'Process sequences of data by retaining memory of previous inputs.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=Ja6N9gQK99nM&format=png&color=000000'
     },
     {
       name: 'Long Short-Term Memory networks (LSTM)',
-      description: 'A type of RNN capable of learning order dependence in sequence prediction problems.'
+      description: 'Extend RNN capabilities by learning long-term dependencies in sequential data.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=Qf9aBbonWfLd&format=png&color=000000'
     },
     {
       name: 'Generative Adversarial Networks (GAN)',
-      description: 'A class of machine learning frameworks designed by a system of two neural networks competing against each other in a zero-sum game framework.'
+      description: 'Pit two neural networks against each other to generate new data instances.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=GBu1KXnCZZ8j&format=png&color=000000'
     },
     {
       name: 'K-Means Clustering',
-      description: 'A method of vector quantization, originally from signal processing, that aims to partition n observations into k clusters.'
+      description: 'Partition data into clusters based on similarity using iterative computation.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=43227&format=png&color=000000'
     },
     {
       name: 'Hierarchical Clustering',
-      description: 'A method of cluster analysis which seeks to build a hierarchy of clusters.'
+      description: 'Build nested clusters by recursively merging or splitting data points.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=IJyJrL3znN8t&format=png&color=000000'
     },
     {
       name: 'Association Rule Learning (Apriori)',
-      description: 'A rule-based machine learning method for discovering interesting relations between variables in large databases.'
+      description: 'Discover relationships between variables in large datasets to make informed decisions.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=Qf9aBbonWfLd&format=png&color=000000'
     },
     {
       name: 'Collaborative Filtering (Matrix Factorization)',
-      description: 'A technique used by recommender systems that makes automatic predictions about the interests of a user by collecting preferences or taste information from many users.'
+      description: 'Predict user preferences by analyzing similarities between users and items.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=Q8TZgy8bDaSf&format=png&color=000000'
     },
     {
       name: 'Hidden Markov Models (HMM)',
-      description: 'A statistical model that represents a system that transitions between hidden states.'
+      description: 'Model sequential data where the system transitions between hidden states.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=jQhWk5R601OC&format=png&color=000000'
     },
     {
       name: 'Gaussian Mixture Models (GMM)',
-      description: 'A probabilistic model for representing normally distributed subpopulations within an overall population.'
+      description: 'Represent data as a mixture of several Gaussian distributions to identify clusters.',
+      iconUrl: 'https://img.icons8.com/?size=100&id=qH0Q9k6h6YA8&format=png&color=000000'
     }
   ];
 
   return (
     <div className='container'>
       <Navbar />
-      <div className='header'>
-        <div className='text' style={{ color: '#00df9a', animation: `${fadeInUp} 4s ease` }}>Let's Train the Model!</div>
-        <div className='underline'></div>
+      <div className='header' style={{ textAlign: 'center', margin: '20px 0' }}>
+        <div className='text' style={{ color: '#00df9a', animation: `${fadeInUp} 4s ease` }}>
+          Let's Train the Model!
+        </div>
+        <div
+          className='underline'
+          style={{ backgroundColor: '#00df9a', height: '3px', width: '50px', margin: 'auto' }}
+        ></div>
       </div>
-      <div className='profile-details' style={styles.profileDetails}>
-        <h1 className='welcome-text' style={{ color: '#00df9a', textAlign: 'center', marginBottom: '20px' }}>Welcome, User!</h1>
-        <div className='card-container' style={styles.cardContainer}>
+      <div className='profile-details' style={{ padding: '20px' }}>
+        <h1 className='welcome-text' style={{ color: '#00df9a', textAlign: 'center', marginBottom: '20px' }}>
+          Welcome, User!
+        </h1>
+        <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-6'>
           {models.map((model, index) => (
-            <Card key={index} sx={{ ...styles.card, opacity: 1 }}>
+            <StyledCard key={index}>
               <CardContent>
-                <Typography gutterBottom variant="h5" component="div" sx={styles.modelName}>
-                  {model.name}
-                </Typography>
-                <Typography variant="body2" sx={{ ...styles.description, color: '#00df9a' }}>
-                  {model.description}
-                </Typography>
+                <div className='flex gap-4 items-center'>
+                  <img
+                    src={model.iconUrl}
+                    alt={model.name}
+                    style={{ width: 150, height: 150, borderRadius: '50%', objectFit: 'cover' }} // Larger size
+                  />
+                  <div>
+                    <Typography variant='h5' style={{ fontSize: '2.2rem' }}>{model.name}</Typography> {/* Adjust font size */}
+                    <Typography variant='body1' >{model.description}</Typography>
+                  </div>
+                </div>
               </CardContent>
-              <CardActions sx={{ justifyContent: 'center' }}>
+              <TrainButtonWrapper>
                 {model.link ? (
                   <Link to={model.link} style={{ textDecoration: 'none', width: '100%' }}>
                     <Button
-                      variant="contained"
-                      size="small"
-                      sx={styles.button}
+                      variant='contained'
+                      size='large' // Adjust button size
+                      style={{ backgroundColor: 'rgb(0, 223, 154)', color: 'black', marginTop: '20px' }} // Adjust styles
+                      onClick={() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
                     >
                       Train
                     </Button>
                   </Link>
                 ) : (
-                  <Button
-                    variant="contained"
-                    size="small"
-                    sx={styles.button}
-                    disabled
-                  >
-                    Train
+                  <Button variant='contained' size='small' disabled>
+                    Coming Soon
                   </Button>
                 )}
-              </CardActions>
-            </Card>
+              </TrainButtonWrapper>
+            </StyledCard>
           ))}
         </div>
       </div>
       <Footer />
     </div>
   );
-};
-
-const styles = {
-  profileDetails: {
-    padding: '20px'
-  },
-  cardContainer: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around'
-  },
-  card: {
-    width: 'calc(50% - 40px)', // Adjust width as per your grid setup
-    minHeight: '50px', // Fixed height to ensure consistent box size
-    margin: '20px',
-    textAlign: 'left',
-    backgroundColor: 'black',
-    color: 'white',
-    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
-    transition: '0.4s',
-    cursor: 'pointer',
-    borderRadius: '10px', // Rounded corners
-    border: '1px solid #ddd', // Border style
-    '&:hover': {
-      transform: 'scale(1.05)',
-      boxShadow: '0 8px 16px 0 rgba(0, 0, 0, 0.2)',
-      backgroundColor: 'white',
-      opacity: 1
-    },
-  },
-  modelName: {
-    color: '#00df9a',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: '3em', // Larger font size
-    marginBottom: '10px'
-  },
-  description: {
-    fontSize: '1.4em', // Increased font size
-    marginBottom: '10px',
-    lineHeight: '1.5',
-    textAlign: 'center',
-    color: 'black' // Green color for the description text
-  },
-  button: {
-    backgroundColor: 'rgb(0, 223, 154)',
-    color: 'white',
-    borderRadius: '.375rem',
-    textAlign: 'center',
-    width: '50%',
-    marginLeft: '140px',
-    marginRight: 'auto',
-    '&:hover': {
-      backgroundColor: 'rgb(0, 183, 124)',
-    },
-  }
 };
 
 export default Profile;
