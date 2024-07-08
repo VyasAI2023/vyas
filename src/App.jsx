@@ -29,6 +29,8 @@ import ModelDecisionTree from "./components/ModelDecisionTree";
 import ModelSupportVectorMachine from "./components/ModelSupportVectorMachine";
 import ModelKNearestNeighbors from "./components/ModelKNearestNeighbors";
 import Blog2 from "./components/company/Blog2";
+import Blog3 from "./components/company/Blog3";
+import Blog4 from "./components/company/Blog4";
 function App() {
   return (
     // <div>
@@ -50,10 +52,12 @@ function App() {
       <Route path="/Modelpage" element={<Modelpage/>}/>
       <Route path="/Upload" element={<Upload/>}/>
       <Route path="/company/About" element={<About />} />
-      <Route path="/company/blog" element={<Blog />} />
+      <Route path="/company/blog" element={<Blog/>} />
       <Route path="/pricing" element={<Pricing/>}/>
       <Route path="/company/blog1" element={<Blog1/>}/>
       <Route path="/company/blog2" element={<Blog2/>}/>
+      <Route path="/company/blog3" element={<Blog3/>}/>
+      <Route path="/company/blog4" element={<Blog4/>}/>
       <Route path="/company/careers" element={<Career/>}/>      
       <Route path="/company/jobs" element={<Jobs/>}/>
       <Route path="/policy" element={<Policy/>}/>

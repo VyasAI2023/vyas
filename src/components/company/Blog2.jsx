@@ -165,6 +165,12 @@ const Blog2 = () => {
               <p className="mb-6">
                 Convolutional Neural Networks have revolutionized computer vision and beyond, enabling machines to interpret visual data with impressive accuracy. As technology advances, CNNs will continue to be vital in developing innovative solutions to complex visual recognition problems.
               </p>
+              <a href="/company/blog3" className="flex items-center text-green-400 hover:text-green-600 font-semibold">
+                Read Next Article
+                <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
             </div>
           </div>
         </div>

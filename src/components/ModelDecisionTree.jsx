@@ -44,7 +44,7 @@ const ModelDecisionTree = () => {
                   <h2 className="text-xl font-bold text-white uppercase px-4 pt-4">Training Options</h2>
                   <ul className="ml-2 space-y-2">
                     <li>
-                      <a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Colab</a>
+                      <a href="https://colab.research.google.com/drive/1W4HE5Yd-rqT86CJdK_xBz5232y6KxuCx#scrollTo=vnCYNCfZttt4" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Colab</a>
                     </li>
                     <li>
                       <a href="https://www.kaggle.com/" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Kaggle</a>
