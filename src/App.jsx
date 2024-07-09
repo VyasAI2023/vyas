@@ -32,16 +32,9 @@ import Blog2 from "./components/company/Blog2";
 import Blog3 from "./components/company/Blog3";
 import Blog4 from "./components/company/Blog4";
 import Claim from "./components/Claim";
+
 function App() {
   return (
-    // <div>
-    //   <Navbar />
-    //   <Hero />
-    //   <Analytics />
-    //   <Newsletter />
-    //   {/* <Cards /> */}
-    //   <Footer />
-    // </div>
     <Routes>
       <Route path="/" element={<MainBody />} />
       <Route path="/home" element={<Home />} />
@@ -76,7 +69,7 @@ function App() {
       <Route path='/modelsupportvectormachine' element={<ModelSupportVectorMachine/>}/>
       <Route path='/modelknearestneighbors' element={<ModelKNearestNeighbors/>}/>
       <Route path="/claim" element={<Claim/>}/>
-      </Routes>
+    </Routes>
   );
 }
 
