@@ -59,7 +59,7 @@ const Career = () => {
                 className="mt-6 inline-block bg-[rgb(0,223,154)] text-gray-900 font-bold py-2 px-3 rounded-lg shadow-sm hover:bg-gray-100 cursor-pointer"
                 style={{ width: "fit-content" }}
               >
-                Upload Image
+                Explore all jobs
               </label>
             </div>
           </div>
