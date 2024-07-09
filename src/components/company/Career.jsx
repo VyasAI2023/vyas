@@ -47,20 +47,13 @@ const Career = () => {
               Machine learning is undeniably the most transformative technology of our time. Your contributions will play a pivotal role in its widespread adoption, influencing industries and enriching lives globally. Join us at the forefront of this technological revolution to shape the future of AI-driven innovations. Together, we will lead the way in creating groundbreaking applications that transform business operations and empower individuals with cutting-edge technology. Our mission is to build a world where AI enhances human potential and fosters sustainable progress.
             </p>
             <div className="flex justify-center">
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageChange}
-                className="hidden"
-                id="imageUpload"
-              />
-              <label
-                htmlFor="imageUpload"
-                className="mt-6 inline-block bg-[rgb(0,223,154)] text-gray-900 font-bold py-2 px-3 rounded-lg shadow-sm hover:bg-gray-100 cursor-pointer"
+              <a
+                href="/company/jobs"
+                className="mt-6 inline-block bg-[rgb(0,223,154)] text-gray-900 font-bold py-2 px-3 rounded-lg shadow-sm hover:bg-gray-100"
                 style={{ width: "fit-content" }}
               >
                 Explore all jobs
-              </label>
+              </a>
             </div>
           </div>
           <div className="relative h-[500px] lg:h-[450px] w-[600px] mx-auto">
