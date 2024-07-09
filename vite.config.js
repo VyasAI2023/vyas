@@ -7,5 +7,10 @@ export default defineConfig({
     proxy: {
       '/api': 'http://localhost:3002'
     }
-  }
+  },
+  build: {
+    rollupOptions: {
+      external: ['firebase/auth', 'firebase/app'], // Add firebase/auth and other Firebase modules as external
+    },
+  },
 });

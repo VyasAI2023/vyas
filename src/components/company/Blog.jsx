@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Card from '@mui/material/Card';
@@ -7,10 +7,19 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Blog = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [refreshed, setRefreshed] = useState(false);
+
+  useEffect(() => {
+    if (!refreshed) {
+      setRefreshed(true);
+      navigate(location.pathname, { replace: true });
+    }
+  }, [refreshed, navigate, location]);
 
   const handleSelect = (blog) => {
     navigate(`/company/${blog}`);
