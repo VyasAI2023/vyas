@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Navbar from './components/Navbar.jsx';
-import Footer from './components/Footer.jsx';
+import Navbar from './Navbar.jsx';
+import Footer from './Footer.jsx';
 
-const LogisticRegressionPage = () => {
+const ModelLogisticRegression = () => {
   const [activeSection, setActiveSection] = useState('overview');
 
   const handleSectionClick = (sectionId) => {
@@ -44,7 +44,7 @@ const LogisticRegressionPage = () => {
                   <h2 className="text-xl font-bold text-white uppercase px-4 pt-4">Training Options</h2>
                   <ul className="ml-2 space-y-2">
                     <li>
-                      <a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Collab</a>
+                      <a href="https://colab.research.google.com/drive/10YV8lXF4XgkInspGrjvEh3DFZ0-AHnUZ#scrollTo=NCVGulJxvBF8" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Colab</a>
                     </li>
                     <li>
                       <a href="https://www.kaggle.com/" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Kaggle</a>
@@ -108,8 +108,8 @@ const LogisticRegressionPage = () => {
             {/* Difference Between Linear and Logistic Regression Section */}
             <section id="difference" className={`mb-12 rounded-xl overflow-hidden bg-black border border-white p-8 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${activeSection === 'difference' ? 'block' : 'hidden'}`}>
               <div className="flex items-center gap-4 mb-4">
-              <img src="https://th.bing.com/th/id/OIP.6neLLzSl8xxntX9xKYdAJwHaHw?rs=1&pid=ImgDetMain" alt="Difference Icon" className="h-12 w-12" />
-              <div className="font-semibold text-4xl">Difference Between Linear and Logistic Regression</div>
+                <img src="https://th.bing.com/th/id/OIP.6neLLzSl8xxntX9xKYdAJwHaHw?rs=1&pid=ImgDetMain" alt="Difference Icon" className="h-12 w-12" />
+                <div className="font-semibold text-4xl">Difference Between Linear and Logistic Regression</div>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
                 While both linear and logistic regression are used to model relationships between variables, they differ in several key aspects:
@@ -140,4 +140,4 @@ const LogisticRegressionPage = () => {
   );
 };
 
-export default LogisticRegressionPage;
+export default ModelLogisticRegression;

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Navbar from './components/Navbar.jsx';
-import Footer from './components/Footer.jsx';
+import Navbar from './Navbar.jsx';
+import Footer from './Footer.jsx';
 
-const LogisticRegressionPage = () => {
+const ModelDecisionTree = () => {
   const [activeSection, setActiveSection] = useState('overview');
 
   const handleSectionClick = (sectionId) => {
@@ -31,20 +31,20 @@ const LogisticRegressionPage = () => {
                   <button onClick={() => handleSectionClick('overview')} className={`block py-4 pl-4 pr-4 text-lg text-left ${activeSection === 'overview' ? 'text-green-500' : 'hover:bg-blue-800 hover:bg-opacity-15'}`}>Overview</button>
                 </li>
                 <li>
-                  <button onClick={() => handleSectionClick('types')} className={`block py-4 pl-4 pr-4 text-lg text-left ${activeSection === 'types' ? 'text-green-500' : 'hover:bg-blue-800 hover:bg-opacity-15'}`}>Types of Logistic Regression</button>
+                  <button onClick={() => handleSectionClick('types')} className={`block py-4 pl-4 pr-4 text-lg text-left ${activeSection === 'types' ? 'text-green-500' : 'hover:bg-blue-800 hover:bg-opacity-15'}`}>Types of Decision Trees</button>
                 </li>
                 <li>
-                  <button onClick={() => handleSectionClick('difference')} className={`block py-4 pl-4 pr-4 text-lg text-left ${activeSection === 'difference' ? 'text-green-500' : 'hover:bg-blue-800 hover:bg-opacity-15'}`}>Difference Between Linear and Logistic Regression</button>
+                  <button onClick={() => handleSectionClick('construction')} className={`block py-4 pl-4 pr-4 text-lg text-left ${activeSection === 'construction' ? 'text-green-500' : 'hover:bg-blue-800 hover:bg-opacity-15'}`}>Construction of Decision Trees</button>
                 </li>
                 <li>
-                  <button onClick={() => handleSectionClick('applications')} className={`block py-4 pl-4 pr-4 text-lg text-left ${activeSection === 'applications' ? 'text-green-500' : 'hover:bg-blue-800 hover:bg-opacity-15'}`}>Applications</button>
+                  <button onClick={() => handleSectionClick('advantages')} className={`block py-4 pl-4 pr-4 text-lg text-left ${activeSection === 'advantages' ? 'text-green-500' : 'hover:bg-blue-800 hover:bg-opacity-15'}`}>Advantages</button>
                 </li>
                 {/* New section */}
                 <li>
                   <h2 className="text-xl font-bold text-white uppercase px-4 pt-4">Training Options</h2>
                   <ul className="ml-2 space-y-2">
                     <li>
-                      <a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Collab</a>
+                      <a href="https://colab.research.google.com/drive/1W4HE5Yd-rqT86CJdK_xBz5232y6KxuCx#scrollTo=vnCYNCfZttt4" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Colab</a>
                     </li>
                     <li>
                       <a href="https://www.kaggle.com/" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Kaggle</a>
@@ -62,7 +62,9 @@ const LogisticRegressionPage = () => {
         {/* Main Content */}
         <main className="flex-1 p-8">
           <div className="max-w-4xl mx-auto py-12">
-            <h1 className="text-5xl font-bold text-green-500 mb-8">Understanding Logistic Regression</h1>
+            <h1 className="text-5xl font-bold text-green-500 mb-8 flex items-center gap-4">
+              Understanding Decision Trees
+            </h1>
 
             {/* Overview Section */}
             <section id="overview" className={`mb-12 rounded-xl overflow-hidden bg-black border border-white p-8 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${activeSection === 'overview' ? 'block' : 'hidden'}`}>
@@ -75,8 +77,8 @@ const LogisticRegressionPage = () => {
                   <iframe 
                     width="560" 
                     height="315" 
-                    src="https://www.youtube.com/embed/yIYKR4sgzI8?feature=shared" 
-                    title="Logistic Regression Video" 
+                    src="https://www.youtube.com/embed/_L39rN6gz7Y?feature=shared" 
+                    title="Decision Trees Overview Video" 
                     frameBorder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowFullScreen
@@ -85,51 +87,53 @@ const LogisticRegressionPage = () => {
                 </div>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Logistic Regression is a statistical model that uses a logistic function to model a binary dependent variable. It estimates the probability of an event occurring based on one or more predictor variables (features).
+                Decision Trees are a popular machine learning algorithm used for classification and regression tasks. They create models that predict the value of a target variable by learning simple decision rules inferred from the data features.
               </p>
             </section>
 
-            {/* Types of Logistic Regression Section */}
+            {/* Types of Decision Trees Section */}
             <section id="types" className={`mb-12 rounded-xl overflow-hidden bg-black border border-white p-8 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${activeSection === 'types' ? 'block' : 'hidden'}`}>
               <div className="flex items-center gap-4 mb-4">
                 <img src="https://thoughts-on-coding.com/img/remote/Z1fFLCA.jpg" alt="Types Icon" className="h-12 w-12" />
-                <div className="font-semibold text-5xl">Types of Logistic Regression</div>
+                <div className="font-semibold text-5xl">Types of Decision Trees</div>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Logistic Regression can be categorized into different types based on the nature of the dependent variable and the number of predictor variables:
+                Decision Trees can vary based on the type of target variable they handle and how they make decisions:
               </p>
               <ul className="list-disc list-inside text-gray-300 text-lg mt-4">
-                <li>Binary Logistic Regression: Used when the dependent variable has only two possible outcomes.</li>
-                <li>Multinomial Logistic Regression: Used when the dependent variable has more than two discrete outcomes.</li>
-                <li>Ordinal Logistic Regression: Used when the dependent variable is ordered categorical.</li>
+                <li>Classification Trees: Used when the target variable is categorical, classifying data into classes or categories.</li>
+                <li>Regression Trees: Used when the target variable is continuous, predicting numerical values.</li>
+                <li>Decision Trees can also be distinguished based on the algorithm used, such as CART (Classification and Regression Trees), ID3, C4.5, etc.</li>
               </ul>
             </section>
 
-            {/* Difference Between Linear and Logistic Regression Section */}
-            <section id="difference" className={`mb-12 rounded-xl overflow-hidden bg-black border border-white p-8 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${activeSection === 'difference' ? 'block' : 'hidden'}`}>
+            {/* Construction of Decision Trees Section */}
+            <section id="construction" className={`mb-12 rounded-xl overflow-hidden bg-black border border-white p-8 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${activeSection === 'construction' ? 'block' : 'hidden'}`}>
               <div className="flex items-center gap-4 mb-4">
-              <img src="https://th.bing.com/th/id/OIP.6neLLzSl8xxntX9xKYdAJwHaHw?rs=1&pid=ImgDetMain" alt="Difference Icon" className="h-12 w-12" />
-              <div className="font-semibold text-4xl">Difference Between Linear and Logistic Regression</div>
+                <img src="https://th.bing.com/th/id/OIP.6neLLzSl8xxntX9xKYdAJwHaHw?rs=1&pid=ImgDetMain" alt="Construction Icon" className="h-12 w-12" />
+                <div className="font-semibold text-4xl">Construction of Decision Trees</div>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
-                While both linear and logistic regression are used to model relationships between variables, they differ in several key aspects:
+                Decision Trees are constructed recursively by splitting the dataset into subsets based on the value of a chosen feature. The splits continue until a stopping criterion is met, such as a maximum depth, minimum number of samples per leaf, or no further improvement in purity measures like Gini impurity or entropy.
               </p>
-              <ul className="list-disc list-inside text-gray-300 text-lg mt-4">
-                <li>Linear Regression predicts continuous numerical values, while Logistic Regression predicts the probability of a binary outcome.</li>
-                <li>Linear Regression uses a linear equation, whereas Logistic Regression uses the logistic function to model probabilities.</li>
-                <li>Linear Regression assumes a linear relationship between the dependent and independent variables, while Logistic Regression does not make this assumption.</li>
-              </ul>
             </section>
 
-            {/* Applications of Logistic Regression Section */}
-            <section id="applications" className={`mb-12 rounded-xl overflow-hidden bg-black border border-white p-8 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${activeSection === 'applications' ? 'block' : 'hidden'}`}>
+            {/* Advantages of Decision Trees Section */}
+            <section id="advantages" className={`mb-12 rounded-xl overflow-hidden bg-black border border-white p-8 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${activeSection === 'advantages' ? 'block' : 'hidden'}`}>
               <div className="flex items-center gap-4 mb-4">
-                <img src="https://img.icons8.com/?size=100&id=fuVH5gdie8Za&format=png&color=000000" alt="Applications Icon" className="h-12 w-12" />
-                <div className="font-semibold text-4xl">Applications</div>
+                <img src="https://img.icons8.com/?size=100&id=fuVH5gdie8Za&format=png&color=000000" alt="Advantages Icon" className="h-12 w-12" />
+                <div className="font-semibold text-4xl">Advantages of Decision Trees</div>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Logistic Regression finds wide application across various fields due to its effectiveness in binary classification tasks. In medicine, it aids in predicting disease outcomes; in finance, it assesses credit risk; and in marketing, it segments customers based on behavior. Its adaptability and interpretability make it indispensable for decision-making in diverse domains.
+                Decision Trees offer several advantages in machine learning applications:
               </p>
+              <ul className="list-disc list-inside text-gray-300 text-lg mt-4">
+                <li>Easy to interpret and visualize.</li>
+                <li>Handle both numerical and categorical data.</li>
+                <li>Implicitly perform feature selection.</li>
+                <li>Non-parametric approach suitable for nonlinear relationships.</li>
+                <li>Robust to outliers and missing values (to some extent).</li>
+              </ul>
             </section>
           </div>
         </main>
@@ -140,4 +144,4 @@ const LogisticRegressionPage = () => {
   );
 };
 
-export default LogisticRegressionPage;
+export default ModelDecisionTree;
