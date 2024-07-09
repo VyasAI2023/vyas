@@ -9,9 +9,7 @@ import Profile from "./components/Profile";
 import Upload from "./components/Upload";
 import Contact from "./components/Contact";
 import About from "./components/company/About";
-import Blog from "./components/company/Blog";
 import Pricing from "./components/Pricing";
-import Blog1 from "./components/company/Blog1";
 import Career from "./components/company/Career";
 import Jobs from "./components/company/Jobs";
 import Policy from "./components/Policy";
@@ -28,10 +26,12 @@ import ModelLogisticRegression from "./components/ModelLogisticRegression";
 import ModelDecisionTree from "./components/ModelDecisionTree";
 import ModelSupportVectorMachine from "./components/ModelSupportVectorMachine";
 import ModelKNearestNeighbors from "./components/ModelKNearestNeighbors";
+import Claim from "./components/Claim";
+import Blog from "./components/company/Blog";
 import Blog2 from "./components/company/Blog2";
 import Blog3 from "./components/company/Blog3";
 import Blog4 from "./components/company/Blog4";
-import Claim from "./components/Claim";
+import Blog1 from "./components/company/Blog1";
 
 function App() {
   return (
@@ -46,12 +46,12 @@ function App() {
       <Route path="/Modelpage" element={<Modelpage/>}/>
       <Route path="/Upload" element={<Upload/>}/>
       <Route path="/company/About" element={<About />} />
-      <Route path="/company/blog" element={<Blog/>} />
+      <Route path="/company/blog" element={<Blog />} />
       <Route path="/pricing" element={<Pricing/>}/>
-      <Route path="/company/blog1" element={<Blog1/>}/>
-      <Route path="/company/blog2" element={<Blog2/>}/>
-      <Route path="/company/blog3" element={<Blog3/>}/>
-      <Route path="/company/blog4" element={<Blog4/>}/>
+      <Route path="/company/blog1" element={<Blog1/>} />
+      <Route path="/company/blog2" element={<Blog2/>} />
+      <Route path="/company/blog3" element={<Blog3/>} />
+      <Route path="/company/blog4" element={<Blog4 />} />
       <Route path="/company/careers" element={<Career/>}/>      
       <Route path="/company/jobs" element={<Jobs/>}/>
       <Route path="/policy" element={<Policy/>}/>

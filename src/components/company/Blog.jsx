@@ -87,7 +87,7 @@ export const Blog = () => {
           />
           <CardContent className='pt-4 pb-2'>
             <Typography gutterBottom variant="h5" component="div" className='font-bold'>
-             Artificial Intelligence in Home Robots: Revolutionarizing Everyday Life
+              Artificial Intelligence in Home Robots: Revolutionarizing Everyday Life
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Discover the future of AI and how it's reshaping industries and societies. Explore the latest advancements, ethical considerations, and potential impacts of AI technologies on our lives.
@@ -114,7 +114,7 @@ export const Blog = () => {
           />
           <CardContent className='pt-4 pb-2'>
             <Typography gutterBottom variant="h5" component="div" className='font-bold'>
-            Comprehensive Overview of Natural Language Processing (NLP)
+              Comprehensive Overview of Natural Language Processing (NLP)
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Delve into the fascinating world of Natural Language Processing (NLP) and its role in making computers understand and generate human language. Explore the techniques, applications, and future trends that are revolutionizing how we interact with technology.

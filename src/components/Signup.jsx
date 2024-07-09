@@ -1,3 +1,4 @@
+// src/components/Signup.js
 import React, { useState } from 'react';
 import './signup.css';
 import emails from '../assets/email.png';
@@ -6,7 +7,8 @@ import person from '../assets/person.png';
 import { useNavigate } from 'react-router-dom';
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-
+import { auth } from '../firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -18,32 +20,16 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation to ensure all fields are filled
     if (!name || !email || !password) {
       setError('Please fill in all fields.');
       return;
     }
 
     try {
-      const response = await fetch('http://localhost:3002/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, password }),
-      });
-      const data = await response.json();
-      console.log(data);
-
-      if (data === 'exist') {
-        setError('User already exists.');
-      } else {
-        setError('');
-        navigate('/login'); // Redirect on successful signup
-      }
+      await createUserWithEmailAndPassword(auth, email, password);
+      navigate('/login');
     } catch (error) {
-      console.error('Error:', error);
-      setError('Something went wrong. Please try again later.');
+      setError('Error creating account: ' + error.message);
     }
   };
 
@@ -56,7 +42,7 @@ const Signup = () => {
             <div className='text'>Sign Up</div>
             <div className='underline'></div>
           </div>
-          {error && <p className="error">{error}</p>} {/* Display error message if there is an error */}
+          {error && <p className="error">{error}</p>}
           <div className='input'>
             <img src={person} alt='' />
             <input
