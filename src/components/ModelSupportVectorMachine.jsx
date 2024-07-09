@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Navbar from './components/Navbar.jsx';
-import Footer from './components/Footer.jsx';
+import Navbar from './Navbar.jsx';
+import Footer from './Footer.jsx';
 
-const LogisticRegressionPage = () => {
+const ModelSupportVectorMachine = () => {
   const [activeSection, setActiveSection] = useState('overview');
 
   const handleSectionClick = (sectionId) => {
@@ -31,10 +31,10 @@ const LogisticRegressionPage = () => {
                   <button onClick={() => handleSectionClick('overview')} className={`block py-4 pl-4 pr-4 text-lg text-left ${activeSection === 'overview' ? 'text-green-500' : 'hover:bg-blue-800 hover:bg-opacity-15'}`}>Overview</button>
                 </li>
                 <li>
-                  <button onClick={() => handleSectionClick('types')} className={`block py-4 pl-4 pr-4 text-lg text-left ${activeSection === 'types' ? 'text-green-500' : 'hover:bg-blue-800 hover:bg-opacity-15'}`}>Types of Logistic Regression</button>
+                  <button onClick={() => handleSectionClick('types')} className={`block py-4 pl-4 pr-4 text-lg text-left ${activeSection === 'types' ? 'text-green-500' : 'hover:bg-blue-800 hover:bg-opacity-15'}`}>Types of SVM</button>
                 </li>
                 <li>
-                  <button onClick={() => handleSectionClick('difference')} className={`block py-4 pl-4 pr-4 text-lg text-left ${activeSection === 'difference' ? 'text-green-500' : 'hover:bg-blue-800 hover:bg-opacity-15'}`}>Difference Between Linear and Logistic Regression</button>
+                  <button onClick={() => handleSectionClick('kernel')} className={`block py-4 pl-4 pr-4 text-lg text-left ${activeSection === 'kernel' ? 'text-green-500' : 'hover:bg-blue-800 hover:bg-opacity-15'}`}>Kernel Methods</button>
                 </li>
                 <li>
                   <button onClick={() => handleSectionClick('applications')} className={`block py-4 pl-4 pr-4 text-lg text-left ${activeSection === 'applications' ? 'text-green-500' : 'hover:bg-blue-800 hover:bg-opacity-15'}`}>Applications</button>
@@ -44,7 +44,7 @@ const LogisticRegressionPage = () => {
                   <h2 className="text-xl font-bold text-white uppercase px-4 pt-4">Training Options</h2>
                   <ul className="ml-2 space-y-2">
                     <li>
-                      <a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Collab</a>
+                      <a href="https://colab.research.google.com/drive/1YW-z1ndmxXvnu4bWzSR0MZOXTfkPTumX#scrollTo=PNbo2APoBI_Z" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Colab</a>
                     </li>
                     <li>
                       <a href="https://www.kaggle.com/" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Kaggle</a>
@@ -62,7 +62,9 @@ const LogisticRegressionPage = () => {
         {/* Main Content */}
         <main className="flex-1 p-8">
           <div className="max-w-4xl mx-auto py-12">
-            <h1 className="text-5xl font-bold text-green-500 mb-8">Understanding Logistic Regression</h1>
+            <h1 className="text-5xl font-bold text-green-500 mb-8 flex items-center gap-4">
+              Understanding Support Vector Machines (SVM)
+            </h1>
 
             {/* Overview Section */}
             <section id="overview" className={`mb-12 rounded-xl overflow-hidden bg-black border border-white p-8 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${activeSection === 'overview' ? 'block' : 'hidden'}`}>
@@ -75,8 +77,8 @@ const LogisticRegressionPage = () => {
                   <iframe 
                     width="560" 
                     height="315" 
-                    src="https://www.youtube.com/embed/yIYKR4sgzI8?feature=shared" 
-                    title="Logistic Regression Video" 
+                    src="https://youtube.com/embed/efR1C6CvhmE?feature=shared" 
+                    title="SVM Overview Video" 
                     frameBorder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowFullScreen
@@ -85,51 +87,52 @@ const LogisticRegressionPage = () => {
                 </div>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Logistic Regression is a statistical model that uses a logistic function to model a binary dependent variable. It estimates the probability of an event occurring based on one or more predictor variables (features).
+                Support Vector Machines (SVM) are powerful supervised learning models used for classification and regression tasks. They find optimal hyperplanes in high-dimensional space to separate different classes of data points.
               </p>
             </section>
 
-            {/* Types of Logistic Regression Section */}
+            {/* Types of SVM Section */}
             <section id="types" className={`mb-12 rounded-xl overflow-hidden bg-black border border-white p-8 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${activeSection === 'types' ? 'block' : 'hidden'}`}>
               <div className="flex items-center gap-4 mb-4">
                 <img src="https://thoughts-on-coding.com/img/remote/Z1fFLCA.jpg" alt="Types Icon" className="h-12 w-12" />
-                <div className="font-semibold text-5xl">Types of Logistic Regression</div>
+                <div className="font-semibold text-5xl">Types of SVM</div>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Logistic Regression can be categorized into different types based on the nature of the dependent variable and the number of predictor variables:
+                Support Vector Machines can vary based on different factors such as the kernel used and the nature of the problem:
               </p>
               <ul className="list-disc list-inside text-gray-300 text-lg mt-4">
-                <li>Binary Logistic Regression: Used when the dependent variable has only two possible outcomes.</li>
-                <li>Multinomial Logistic Regression: Used when the dependent variable has more than two discrete outcomes.</li>
-                <li>Ordinal Logistic Regression: Used when the dependent variable is ordered categorical.</li>
+                <li>Linear SVM: Uses a linear kernel for linearly separable data.</li>
+                <li>Non-linear SVM: Utilizes kernels like polynomial, radial basis function (RBF), or sigmoid to handle non-linear separable data.</li>
+                <li>Support Vector Regression (SVR): Extension of SVM for regression tasks.</li>
               </ul>
             </section>
 
-            {/* Difference Between Linear and Logistic Regression Section */}
-            <section id="difference" className={`mb-12 rounded-xl overflow-hidden bg-black border border-white p-8 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${activeSection === 'difference' ? 'block' : 'hidden'}`}>
+            {/* Kernel Methods Section */}
+            <section id="kernel" className={`mb-12 rounded-xl overflow-hidden bg-black border border-white p-8 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${activeSection === 'kernel' ? 'block' : 'hidden'}`}>
               <div className="flex items-center gap-4 mb-4">
-              <img src="https://th.bing.com/th/id/OIP.6neLLzSl8xxntX9xKYdAJwHaHw?rs=1&pid=ImgDetMain" alt="Difference Icon" className="h-12 w-12" />
-              <div className="font-semibold text-4xl">Difference Between Linear and Logistic Regression</div>
+                <img src="https://th.bing.com/th/id/OIP.6neLLzSl8xxntX9xKYdAJwHaHw?rs=1&pid=ImgDetMain" alt="Kernel Methods Icon" className="h-12 w-12" />
+                <div className="font-semibold text-4xl">Kernel Methods in SVM</div>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
-                While both linear and logistic regression are used to model relationships between variables, they differ in several key aspects:
+                Kernel methods in SVM allow the algorithm to operate in a higher-dimensional feature space without explicitly computing the transformations. This approach enables SVM to handle complex decision boundaries and non-linear relationships between features.
               </p>
-              <ul className="list-disc list-inside text-gray-300 text-lg mt-4">
-                <li>Linear Regression predicts continuous numerical values, while Logistic Regression predicts the probability of a binary outcome.</li>
-                <li>Linear Regression uses a linear equation, whereas Logistic Regression uses the logistic function to model probabilities.</li>
-                <li>Linear Regression assumes a linear relationship between the dependent and independent variables, while Logistic Regression does not make this assumption.</li>
-              </ul>
             </section>
 
-            {/* Applications of Logistic Regression Section */}
+            {/* Applications of SVM Section */}
             <section id="applications" className={`mb-12 rounded-xl overflow-hidden bg-black border border-white p-8 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${activeSection === 'applications' ? 'block' : 'hidden'}`}>
               <div className="flex items-center gap-4 mb-4">
                 <img src="https://img.icons8.com/?size=100&id=fuVH5gdie8Za&format=png&color=000000" alt="Applications Icon" className="h-12 w-12" />
-                <div className="font-semibold text-4xl">Applications</div>
+                <div className="font-semibold text-4xl">Applications of SVM</div>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Logistic Regression finds wide application across various fields due to its effectiveness in binary classification tasks. In medicine, it aids in predicting disease outcomes; in finance, it assesses credit risk; and in marketing, it segments customers based on behavior. Its adaptability and interpretability make it indispensable for decision-making in diverse domains.
+                SVM finds applications across various domains due to its ability to handle high-dimensional data and complex decision boundaries:
               </p>
+              <ul className="list-disc list-inside text-gray-300 text-lg mt-4">
+                <li>Text classification and sentiment analysis.</li>
+                <li>Image recognition and computer vision tasks.</li>
+                <li>Bioinformatics and medical diagnostics.</li>
+                <li>Financial forecasting and stock market analysis.</li>
+              </ul>
             </section>
           </div>
         </main>
@@ -140,4 +143,4 @@ const LogisticRegressionPage = () => {
   );
 };
 
-export default LogisticRegressionPage;
+export default ModelSupportVectorMachine;

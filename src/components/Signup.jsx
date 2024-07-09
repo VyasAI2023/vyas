@@ -1,3 +1,4 @@
+// src/components/Signup.js
 import React, { useState } from 'react';
 import './signup.css';
 import emails from '../assets/email.png';
