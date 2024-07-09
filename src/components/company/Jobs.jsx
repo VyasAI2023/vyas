@@ -92,7 +92,7 @@ const Jobs = () => {
   </div>
 </div>
 
-      <div className="section--default--gray padding--t64b64 m-32">
+      <div className="section--default--gray padding--t64b64 m-10">
       <h2
   id="benefits"
   className="text-center text-4xl md:text-6xl mb-4 md:mb-8 font-bold text-white"
@@ -103,10 +103,8 @@ const Jobs = () => {
         <br />
         <br />
         <div className="w-layout-grid benefit__grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-    className="benefit-card text-center bg-white rounded-lg flex flex-col justify-center items-center p-8"
-  >
-    <svg
+        <div className="benefit-card text-center bg-white rounded-lg flex flex-col justify-center items-center p-8 h-64 w-full sm:h-auto sm:w-auto">
+        <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="teal"
@@ -123,9 +121,7 @@ const Jobs = () => {
     </p>
   </div>
 
-  <div
-    className="benefit-card text-center bg-white rounded-lg flex flex-col justify-center items-center p-8"
-  >
+            <div className="benefit-card text-center bg-white rounded-lg flex flex-col justify-center items-center p-8 h-64 w-full sm:h-auto sm:w-auto">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -143,9 +139,7 @@ const Jobs = () => {
               embarrassing, and have the courage to change.
             </p>
           </div>
-          <div
-    className="benefit-card text-center bg-white rounded-lg flex flex-col justify-center items-center p-8"
-  >
+          <div className="benefit-card text-center bg-white rounded-lg flex flex-col justify-center items-center p-8 h-64 w-full sm:h-auto sm:w-auto">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -164,9 +158,7 @@ const Jobs = () => {
               and we work hard to make sure everyone feels involved.
             </p>
           </div>
-          <div
-    className="benefit-card text-center bg-white rounded-lg flex flex-col justify-center items-center p-8"
-  >
+          <div className="benefit-card text-center bg-white rounded-lg flex flex-col justify-center items-center p-8 h-64 w-full sm:h-auto sm:w-auto">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -181,9 +173,7 @@ const Jobs = () => {
             </h6>
             <p className="hidden sm:block mt-2">We are biased towards action and results.</p>
           </div>
-          <div
-    className="benefit-card text-center bg-white rounded-lg flex flex-col justify-center items-center p-8"
-  >
+          <div className="benefit-card text-center bg-white rounded-lg flex flex-col justify-center items-center p-8 h-64 w-full sm:h-auto sm:w-auto">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -201,9 +191,7 @@ const Jobs = () => {
               to achieve something special together at VyasAI.
             </p>
           </div>
-          <div
-    className="benefit-card text-center bg-white rounded-lg flex flex-col justify-center items-center p-8"
-  >
+          <div className="benefit-card text-center bg-white rounded-lg flex flex-col justify-center items-center p-8 h-64 w-full sm:h-auto sm:w-auto">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
