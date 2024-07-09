@@ -68,32 +68,30 @@ const Jobs = () => {
         </div>
       </div>
       <div className="section--default--padded bg-gradient-to-r from-aquavision-500 via-purple-500 to-purboflow-500 text-white px-12 py-8">
-        <div id="Open-Positions" className="text-center">
-          <hr className="mt-4 mb-4 w-[calc(100%-200px)] border-t-2 border-white mx-auto pb-4" />
-          <div className="jobs-wrapper">
-            <div role="list" className="w-dyn-items text-left">
-              {jobList.map((job, index) => (
-                <div key={index} role="listitem" className="w-dyn-item mb-8">
-                  <a
-                    href={job.link}
-                    className="jobcard-container w-inline-block"
-                  >
-                    <h3 className="jobcard_title text-white text-2xl mb-2 font-bold pl-32">
-                      {job.title}
-                    </h3>
-                    <div className="jobcard_description text-white text-lg pl-32">
-                      {job.location} &nbsp;/&nbsp; {job.department}
-                    </div>
-                  </a>
-                  {index < jobList.length - 1 && (
-                    <hr className="mt-4 mb-4 w-[calc(100%-200px)] border-t-2 border-white mx-auto" />
-                  )}
-                </div>
-              ))}
-            </div>
+  <div id="Open-Positions" className="text-center">
+    <hr className="mt-4 mb-4 w-[calc(100%-200px)] border-t-2 border-white mx-auto pb-4" />
+    <div className="jobs-wrapper">
+      <div role="list" className="w-dyn-items text-left">
+        {jobList.map((job, index) => (
+          <div key={index} role="listitem" className="w-dyn-item mb-8">
+            <a href={job.link} className="jobcard-container w-inline-block">
+              <h3 className="jobcard_title text-white text-2xl mb-2 font-bold pl-8 md:pl-32 text-left md:text-left">
+                {job.title}
+              </h3>
+              <div className="jobcard_description text-white text-lg pl-8 md:pl-32 text-left md:text-left">
+                {job.location} &nbsp;/&nbsp; {job.department}
+              </div>
+            </a>
+            {index < jobList.length - 1 && (
+              <hr className="mt-4 mb-4 w-[calc(100%-200px)] border-t-2 border-white mx-auto" />
+            )}
           </div>
-        </div>
+        ))}
       </div>
+    </div>
+  </div>
+</div>
+
       <div className="section--default--gray padding--t64b64 m-32">
         <h2
           id="benefits"
@@ -104,7 +102,7 @@ const Jobs = () => {
         <br />
         <br />
         <div className="w-layout-grid benefit__grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div
+          <div
     className="benefit-card text-center bg-white rounded-lg flex flex-col justify-center items-center p-8"
   >
     <svg
