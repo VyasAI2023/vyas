@@ -224,13 +224,14 @@ const Jobs = () => {
         </div>
         <br />
         <div className="hero_button_container w-container text-center mt-8">
-          <a
-            href="#Open-Positions"
-            className="button w-button bg-[rgb(0,223,154)] text-white px-8 py-4 rounded-full"
-          >
-            See Open Positions
-          </a>
-        </div>
+  <a
+    href="#Open-Positions"
+    className="button w-button bg-[rgb(0,223,154)] text-white px-4 py-2 md:px-8 md:py-4 rounded-full text-sm md:text-base"
+  >
+    See Positions
+  </a>
+</div>
+
       </div>
       <Footer />
     </div>
