@@ -31,6 +31,7 @@ import ModelKNearestNeighbors from "./components/ModelKNearestNeighbors";
 import Blog2 from "./components/company/Blog2";
 import Blog3 from "./components/company/Blog3";
 import Blog4 from "./components/company/Blog4";
+import Claim from "./components/Claim";
 function App() {
   return (
     // <div>
@@ -74,6 +75,7 @@ function App() {
       <Route path='/modeldecisiontree' element={<ModelDecisionTree/>}/>
       <Route path='/modelsupportvectormachine' element={<ModelSupportVectorMachine/>}/>
       <Route path='/modelknearestneighbors' element={<ModelKNearestNeighbors/>}/>
+      <Route path="/claim" element={<Claim/>}/>
       </Routes>
   );
 }
