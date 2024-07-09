@@ -93,12 +93,13 @@ const Jobs = () => {
 </div>
 
       <div className="section--default--gray padding--t64b64 m-32">
-        <h2
-          id="benefits"
-          className="text-center text-6xl mb-8 font-bold text-white"
-        >
-          Benefits
-        </h2>
+      <h2
+  id="benefits"
+  className="text-center text-4xl md:text-6xl mb-4 md:mb-8 font-bold text-white"
+>
+  Benefits
+</h2>
+
         <br />
         <br />
         <div className="w-layout-grid benefit__grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
