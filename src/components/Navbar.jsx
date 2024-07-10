@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [showCompanyCard, setShowCompanyCard] = useState(false);
   const [showResourcesCard, setShowResourcesCard] = useState(false);
   const [showModelCard, setShowModelCard] = useState(false);
+  
+  const location = useLocation(); // Hook to get current path
 
   const handleNav = () => {
     setNav(!nav);
@@ -97,9 +99,11 @@ const Navbar = () => {
         <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
           <Link to="/pricing">Pricing</Link>
         </li>
-        <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
-          <Link to="/login">Login</Link>
-        </li>
+        {location.pathname === "/" && ( // Conditionally render Login button only on home page
+          <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
+            <Link to="/login">Login</Link>
+          </li>
+        )}
       </ul>
       <div onClick={handleNav} className="block md:hidden cursor-pointer z-50">
         {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
@@ -151,9 +155,11 @@ const Navbar = () => {
         <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
           <Link to="/pricing">Pricing</Link>
         </li>
-        <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
-          <Link to="/login">Login</Link>
-        </li>
+        {location.pathname === "/" && ( // Conditionally render Login button only on home page
+          <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
+            <Link to="/login">Login</Link>
+          </li>
+        )}
         <li
           className="p-4 cursor-pointer hover:text-gray-500 hover:underline relative"
           onClick={handleCompanyCard}

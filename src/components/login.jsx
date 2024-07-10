@@ -4,8 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import './loginsignup.css';
 import em from '../assets/email.png';
 import pass from '../assets/password.png';
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from './Navbar';
+import Footer from './Footer';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
@@ -52,7 +52,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="forget-password">Lost Password? <span>Click Here!</span></div>
+          <div className="forget-password">Lost Password? <span onClick={() => navigate('/ForgotPassword')}>Click Here!</span></div>
           <div className="submit-container">
             <button onClick={() => navigate('/Signup')} className={'gray'}>Sign Up</button>
             <button type="sub" className={'sub'}>Login</button>

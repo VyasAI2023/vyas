@@ -1,10 +1,9 @@
-// src/components/Signup.js
 import React, { useState } from 'react';
 import './signup.css';
 import emails from '../assets/email.png';
 import passwords from '../assets/password.png';
 import person from '../assets/person.png';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { auth } from '../firebase';
@@ -43,35 +42,38 @@ const Signup = () => {
             <div className='underline'></div>
           </div>
           {error && <p className="error">{error}</p>}
-          <div className='input'>
-            <img src={person} alt='' />
-            <input
-              type='text'
-              placeholder='Name'
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className='input'>
-            <img src={emails} alt='' />
-            <input
-              type='email'
-              placeholder='Email ID'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className='input'>
-            <img src={passwords} alt='' />
-            <input
-              type='password'
-              placeholder='Password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+          <div className='inputs'>
+            <div className='input'>
+              <img src={person} alt='' />
+              <input
+                type='text'
+                placeholder='Name'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className='input'>
+              <img src={emails} alt='' />
+              <input
+                type='email'
+                placeholder='Email ID'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className='input'>
+              <img src={passwords} alt='' />
+              <input
+                type='password'
+                placeholder='Password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
           </div>
           <div className='submit-container'>
-            <button type='sub' className='sub'>Submit</button>
+            <Link to='/login' className='login-btn'>Login</Link>
+            <button type='submit' className='sub'>Submit</button>
           </div>
         </form>
       </div>

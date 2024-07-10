@@ -32,6 +32,7 @@ import Blog2 from "./components/company/Blog2";
 import Blog3 from "./components/company/Blog3";
 import Blog4 from "./components/company/Blog4";
 import Blog1 from "./components/company/Blog1";
+import ForgotPassword from "./components/ForgotPassword";
 
 function App() {
   return (
@@ -69,6 +70,7 @@ function App() {
       <Route path='/modelsupportvectormachine' element={<ModelSupportVectorMachine/>}/>
       <Route path='/modelknearestneighbors' element={<ModelKNearestNeighbors/>}/>
       <Route path="/claim" element={<Claim/>}/>
+      <Route path="/forgotpassword" element={<ForgotPassword/>}/>
     </Routes>
   );
 }
