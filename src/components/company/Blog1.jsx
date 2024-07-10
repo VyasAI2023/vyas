@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import hridyanshuPhoto from '../../assets/Passport_Photograph.jpg';
 
 const Blog1 = () => {
   const sectionsRef = useRef([]);
@@ -82,6 +83,14 @@ const Blog1 = () => {
               </li>
             </ul>
           </div>
+          {/* Add your image below the content table */}
+          <div className="mt-4">
+            <img
+              className="w-full rounded-lg shadow-lg"
+              src={hridyanshuPhoto}
+              alt="Description of your image"
+            />
+          </div>
         </div>
 
         {/* Blog Content */}
@@ -158,19 +167,18 @@ X = [[1, 2], [1, 4], [1, 0], [4, 2], [4, 4], [4, 0]]
 kmeans = KMeans(n_clusters=2)
 kmeans.fit(X)
 
-# Get the cluster centers
-centers = kmeans.cluster_centers_
-print("Cluster centers:", centers)`}
+# Print the cluster centers
+print("Cluster centers:", kmeans.cluster_centers_)`}
               </pre>
             </div>
             <div id="pca" ref={(el) => sectionsRef.current[5] = el}>
               <h4 className="text-2xl font-semibold mb-4">Principal Component Analysis (PCA)</h4>
-              <p className="mb-4">PCA is like a magician, reducing the dimensionality of data while retaining its essence. It's invaluable for visualizing complex datasets.</p>
+              <p className="mb-4">A dimensionality reduction technique, PCA finds patterns in data by identifying the directions (principal components) that capture the most variance.</p>
               <pre className="bg-gray-700 p-4 rounded-lg text-white mb-6">
 {`from sklearn.decomposition import PCA
 
 # Sample data: points in 3D space
-X = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [2, 3, 4], [5, 6, 7], [8, 9, 10]]
+X = [[1, 2, 3], [1, 4, 5], [1, 0, -1], [4, 2, 2], [4, 4, 4], [4, 0, 0]]
 
 # Create and train the model
 pca = PCA(n_components=2)
@@ -181,15 +189,15 @@ print("Reduced data:", X_reduced)`}
               </pre>
             </div>
             <div id="beyond-basics" ref={(el) => sectionsRef.current[6] = el}>
-              <h3 className="text-3xl font-bold mb-6">Beyond the Basics: Exploring Advanced Machine Learning Techniques</h3>
+              <h3 className="text-3xl font-bold mb-6">Beyond the Basics: The Ever-Evolving World of Machine Learning</h3>
               <p className="mb-6">
-                Let's embark on a journey to discover advanced techniques and their practical implementations.
+                The field of machine learning is constantly evolving, with new algorithms and techniques being developed. From deep learning models like Convolutional Neural Networks (CNNs) for image recognition to Reinforcement Learning for training agents to play games, the possibilities are endless. Keep exploring and stay updated with the latest advancements.
               </p>
             </div>
             <div id="takeaway" ref={(el) => sectionsRef.current[7] = el}>
-              <h3 className="text-3xl font-bold mb-6">The Takeaway: Empowering Your Machine Learning Journey</h3>
+              <h3 className="text-3xl font-bold mb-6">The Takeaway</h3>
               <p className="mb-6">
-                Machine learning is a powerful tool that can unlock new possibilities. By understanding these fundamental models and techniques, you're well on your way to harnessing the full potential of machine learning in your projects.
+                Machine learning opens up a world of possibilities, offering innovative solutions to complex problems. With a solid understanding of these foundational models, you're well-equipped to embark on your own machine learning journey.
               </p>
               <a href="/company/blog2" className="flex items-center text-green-400 hover:text-green-600 font-semibold">
                 Read Next Article
@@ -204,6 +212,6 @@ print("Reduced data:", X_reduced)`}
       <Footer />
     </div>
   );
-}
+};
 
 export default Blog1;
