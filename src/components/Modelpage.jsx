@@ -15,7 +15,7 @@ const modelData = [
     title: "Linear Regression",
     description: "A linear approach to modeling the relationship between a dependent variable and one or more independent variables, where the prediction is a continuous value.",
     image: "https://img.icons8.com/?size=100&id=fuVH5gdie8Za&format=png&color=000000",
-    category: "REGRESSION"
+    category: "REGRESSION",
   },
   {
     title: "Logistic Regression",
@@ -214,29 +214,45 @@ export const Modelpage = () => {
           </div>
         </div>
 
-        <div className='md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 mt-10'>
+        <div className='md:grid md:grid-cols-2 lg:grid-cols-2 gap-8 px-4 mt-10'>
           {filteredModels.map((model, index) => (
-            <Card key={index} className='hover:bg-slate-600 hover:shadow-lg transition-all duration-300 text-center'>
-              <CardMedia
-                component='img'
-                alt={model.title}
-                height='140'
-                image={model.image}
-              />
-              <CardContent>
-                <Typography gutterBottom variant='h5' component='div'>
-                  {model.title}
-                </Typography>
-                <Typography variant='body2' color='text.secondary'>
-                  {model.description}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button size='small' color='primary' onClick={() => handleSelect(model.category)}>
-                  Select
-                </Button>
-              </CardActions>
-            </Card>
+            // <Card key={index} className='hover:bg-slate-600 hover:shadow-lg transition-all duration-300 text-center'>
+            //   <CardMedia
+            //     component='img'
+            //     alt={model.title}
+            //     height='140'
+            //     image={model.image}
+            //   />
+            //   <CardContent>
+            //     <Typography gutterBottom variant='h5' component='div'>
+            //       {model.title}
+            //     </Typography>
+            //     <Typography variant='body2' color='text.secondary'>
+            //       {model.description}
+            //     </Typography>
+            //   </CardContent>
+            //   <CardActions>
+            //     <Button size='small' color='primary' onClick={() => handleSelect(model.category)}>
+            //       Select
+            //     </Button>
+            //   </CardActions>
+            // </Card>
+            <a href={model.link}>
+            <div key={index} className='border border-slate-900 rounded-xl  p-6 text-white cursor-pointer hover:scale-105 shadow-xl shadow-slate-900 ease-out duration-300'>
+              <div className='flex gap-6'>
+                <div className='my-auto'><img src={model.image} alt="" /></div>
+                <div className='font-semibold text-2xl'>{model.title}</div>
+              </div>
+              <div className='mt-2 text-slate-400'>
+                {model.description}
+              </div>
+              <div className='flex mt-4'>
+                <div className='p-1 text-xs font-semibold text-slate-400 border rounded-full '>
+                  {model.category}
+                </div>
+              </div>
+            </div>
+            </a>
           ))}
         </div>
       </div>
