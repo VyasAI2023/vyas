@@ -20,7 +20,8 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, password);
       navigate('/Profile');
     } catch (error) {
-      alert('Invalid email or password');
+      alert(`Error: ${error.message}`);
+      console.error('Login error:', error);
     }
   };
 
@@ -40,6 +41,7 @@ const Login = () => {
               placeholder='Email ID'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className="input">
@@ -49,9 +51,12 @@ const Login = () => {
               placeholder='Password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
-          <div className="forget-password">Lost Password? <span onClick={() => navigate('/ForgotPassword')}>Click Here!</span></div>
+          <div className="forget-password">
+            Lost Password? <span onClick={() => navigate('/ForgotPassword')} className="click-here">Click Here!</span>
+          </div>
           <div className="submit-container">
             <button type="button" onClick={() => navigate('/Signup')} className='gray'>Sign Up</button>
             <button type="submit" className='sub'>Login</button>

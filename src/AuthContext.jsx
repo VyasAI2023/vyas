@@ -20,7 +20,7 @@ export const AuthContextProvider = ({ children }) => {
       setCurrentUser(user);
       setLoading(false);
       const path = location.pathname.toLowerCase();
-      if (!user && path !== '/login' && path !== '/signup' && path!== '/') {
+      if (!user && path !== '/login' && path !== '/signup' && path!== '/' && path != '/forgotpassword') {
         navigate('/login');
       }
     });
