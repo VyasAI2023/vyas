@@ -40,14 +40,22 @@ const Navbar = () => {
     }
   };
 
+  const handleHomeClick = async () => {
+    if (currentUser) {
+      await handleLogout();
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <div className="relative flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
       <h1 className="w-full text-3xl font-bold text-[#00df9a]">
-        <Link to="/">Vyas.AI</Link>
+        <Link to="/" onClick={handleHomeClick}>Vyas.AI</Link>
       </h1>
       <ul className="hidden md:flex">
         <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={handleHomeClick}>Home</Link>
         </li>
         <li
           className="p-4 cursor-pointer hover:text-gray-500 hover:underline relative"
@@ -139,7 +147,7 @@ const Navbar = () => {
           Vyas.AI
         </h1>
         <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={handleHomeClick}>Home</Link>
         </li>
         <li
           className="p-4 cursor-pointer hover:text-gray-500 hover:underline relative"
