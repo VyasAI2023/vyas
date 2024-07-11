@@ -92,7 +92,7 @@ export const Blog = () => {
           <CardMedia
             component="img"
             height="200"
-            image="https://media0.giphy.com/media/Hrm0LJNRkPHDkLIHz9/giphy.gif?cid=6c09b952r8b9ycou4wcospw1nz5kq5l72ofqwrp3wr49s9p6&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g"
+            image="https://media1.giphy.com/media/5k5vZwRFZR5aZeniqb/giphy.gif"
             alt="New Blog Image"
           />
           <CardContent className='pt-4 pb-2'>
@@ -107,7 +107,7 @@ export const Blog = () => {
             <div className='flex items-center text-gray-600'>
               <time dateTime="2024-07-06" className="text-sm mr-2">July 8, 2024</time>
               <div className="border-l-2 h-4 mx-2"></div>
-              <a className="text-sm" href="https://www.linkedin.com/in/shagunmengi/">Shagun Mengi BTech CSE 3rd year</a>
+              <a className="text-sm" href="https://www.linkedin.com/in/shagunmengi/">Shagun Mengi BTech CSE </a>
             </div>
             <Button variant="contained" color="primary" onClick={() => handleSelect('blog3')}>
               Read More
@@ -134,7 +134,7 @@ export const Blog = () => {
             <div className='flex items-center text-gray-600'>
               <time dateTime="2024-07-08" className="text-sm mr-2">July 8, 2024</time>
               <div className="border-l-2 h-4 mx-2"></div>
-              <a className="text-sm" href="https://www.linkedin.com/in/anirudh-salaria-0953b1247/">Anirudh Salaria BTech CSE 3rd year</a>
+              <a className="text-sm" href="https://www.linkedin.com/in/anirudh-salaria-0953b1247/">Anirudh Salaria BTech CSE </a>
             </div>
             <Button variant="contained" color="primary" onClick={() => handleSelect('blog4')}>
               Read More
