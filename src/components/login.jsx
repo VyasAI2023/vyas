@@ -1,4 +1,3 @@
-// src/components/Login.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './loginsignup.css';
@@ -35,7 +34,7 @@ const Login = () => {
         </div>
         <form onSubmit={handleSubmit}>
           <div className="input">
-            <img src={em} alt="" />
+            <img src={em} alt="Email" />
             <input
               type="email"
               placeholder='Email ID'
@@ -44,7 +43,7 @@ const Login = () => {
             />
           </div>
           <div className="input">
-            <img src={pass} alt="" />
+            <img src={pass} alt="Password" />
             <input
               type="password"
               placeholder='Password'
@@ -54,8 +53,8 @@ const Login = () => {
           </div>
           <div className="forget-password">Lost Password? <span onClick={() => navigate('/ForgotPassword')}>Click Here!</span></div>
           <div className="submit-container">
-            <button onClick={() => navigate('/Signup')} className={'gray'}>Sign Up</button>
-            <button type="sub" className={'sub'}>Login</button>
+            <button type="button" onClick={() => navigate('/Signup')} className='gray'>Sign Up</button>
+            <button type="submit" className='sub'>Login</button>
           </div>
         </form>
       </div>
