@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from '../AuthContext'; // Correct import
+import { signOut } from "firebase/auth";
+import { auth } from '../firebase'; // Adjust path to firebase
 
 const Navbar = () => {
+  const { currentUser } = useAuth(); // Get the current user from context
   const [nav, setNav] = useState(false);
   const [showCompanyCard, setShowCompanyCard] = useState(false);
   const [showResourcesCard, setShowResourcesCard] = useState(false);
   const [showModelCard, setShowModelCard] = useState(false);
   
   const location = useLocation(); // Hook to get current path
+  const navigate = useNavigate();
 
   const handleNav = () => {
     setNav(!nav);
@@ -24,6 +29,15 @@ const Navbar = () => {
 
   const handleModelCard = () => {
     setShowModelCard(!showModelCard);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate("/"); // Redirect to home page after logout
+    } catch (error) {
+      console.error("Error signing out: ", error);
+    }
   };
 
   return (
@@ -99,10 +113,16 @@ const Navbar = () => {
         <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
           <Link to="/pricing">Pricing</Link>
         </li>
-        {location.pathname === "/" && ( // Conditionally render Login button only on home page
-          <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
-            <Link to="/login">Login</Link>
+        {currentUser ? ( // Conditionally render Logout button if user is logged in
+          <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline" onClick={handleLogout}>
+            Logout
           </li>
+        ) : (
+          location.pathname === "/" && ( // Conditionally render Login button only on home page
+            <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
+              <Link to="/login">Login</Link>
+            </li>
+          )
         )}
       </ul>
       <div onClick={handleNav} className="block md:hidden cursor-pointer z-50">
@@ -155,10 +175,16 @@ const Navbar = () => {
         <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
           <Link to="/pricing">Pricing</Link>
         </li>
-        {location.pathname === "/" && ( // Conditionally render Login button only on home page
-          <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
-            <Link to="/login">Login</Link>
+        {currentUser ? ( // Conditionally render Logout button if user is logged in
+          <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline" onClick={handleLogout}>
+            Logout
           </li>
+        ) : (
+          location.pathname === "/" && ( // Conditionally render Login button only on home page
+            <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
+              <Link to="/login">Login</Link>
+            </li>
+          )
         )}
         <li
           className="p-4 cursor-pointer hover:text-gray-500 hover:underline relative"
