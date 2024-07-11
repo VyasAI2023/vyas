@@ -33,45 +33,49 @@ import Blog3 from "./components/company/Blog3";
 import Blog4 from "./components/company/Blog4";
 import Blog1 from "./components/company/Blog1";
 import ForgotPassword from "./components/ForgotPassword";
+import PrivateRoute from "./PrivateRoute";
+import { AuthContextProvider } from "./AuthContext";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<MainBody />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/resources" element={<Home />} />
-      <Route path="/Contact" element={<Contact />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/Signup" element={<Signup/>}/>
-      <Route path="/Profile" element={<Profile/>}/>
-      <Route path="/Modelpage" element={<Modelpage/>}/>
-      <Route path="/Upload" element={<Upload/>}/>
-      <Route path="/company/About" element={<About />} />
-      <Route path="/company/blog" element={<Blog />} />
-      <Route path="/pricing" element={<Pricing/>}/>
-      <Route path="/company/blog1" element={<Blog1/>} />
-      <Route path="/company/blog2" element={<Blog2/>} />
-      <Route path="/company/blog3" element={<Blog3/>} />
-      <Route path="/company/blog4" element={<Blog4 />} />
-      <Route path="/company/careers" element={<Career/>}/>      
-      <Route path="/company/jobs" element={<Jobs/>}/>
-      <Route path="/policy" element={<Policy/>}/>
-      <Route path="/terms" element={<Terms/>}/>
-      <Route path="/documentation" element={<Documentation/>}/>
-      <Route path="/status" element={<StatusPage/>}/>
-      <Route path="/store" element={<Store/>}/>
-      <Route path="/guide" element={<Guide/>}/>
-      <Route path="/logisticregression" element={<LogisticRegression/>}/>
-      <Route path="/decisiontree" element={<DecisionTree/>}/>
-      <Route path="/supportvectormachine" element={<SupportVectorMachine/>}/>
-      <Route path="/knearestneighbors" element={<KNearestNeighbors/>}/>
-      <Route path='/modellogisticregression' element={<ModelLogisticRegression/>}/>
-      <Route path='/modeldecisiontree' element={<ModelDecisionTree/>}/>
-      <Route path='/modelsupportvectormachine' element={<ModelSupportVectorMachine/>}/>
-      <Route path='/modelknearestneighbors' element={<ModelKNearestNeighbors/>}/>
-      <Route path="/claim" element={<Claim/>}/>
-      <Route path="/forgotpassword" element={<ForgotPassword/>}/>
-    </Routes>
+    <AuthContextProvider>
+      <Routes>
+        <Route path="/" element={<MainBody />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/resources" element={<Home />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/Signup" element={<Signup />} />
+        <Route path="/Profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+        <Route path="/Modelpage" element={<PrivateRoute><Modelpage /></PrivateRoute>} />
+        <Route path="/Upload" element={<PrivateRoute><Upload /></PrivateRoute>} />
+        <Route path="/company/About" element={<PrivateRoute><About /></PrivateRoute>} />
+        <Route path="/company/blog" element={<PrivateRoute><Blog /></PrivateRoute>} />
+        <Route path="/pricing" element={<PrivateRoute><Pricing /></PrivateRoute>} />
+        <Route path="/company/blog1" element={<PrivateRoute><Blog1 /></PrivateRoute>} />
+        <Route path="/company/blog2" element={<PrivateRoute><Blog2 /></PrivateRoute>} />
+        <Route path="/company/blog3" element={<PrivateRoute><Blog3 /></PrivateRoute>} />
+        <Route path="/company/blog4" element={<PrivateRoute><Blog4 /></PrivateRoute>} />
+        <Route path="/company/careers" element={<PrivateRoute><Career /></PrivateRoute>} />
+        <Route path="/company/jobs" element={<PrivateRoute><Jobs /></PrivateRoute>} />
+        <Route path="/policy" element={<PrivateRoute><Policy /></PrivateRoute>} />
+        <Route path="/terms" element={<PrivateRoute><Terms /></PrivateRoute>} />
+        <Route path="/documentation" element={<PrivateRoute><Documentation /></PrivateRoute>} />
+        <Route path="/status" element={<PrivateRoute><StatusPage /></PrivateRoute>} />
+        <Route path="/store" element={<PrivateRoute><Store /></PrivateRoute>} />
+        <Route path="/guide" element={<PrivateRoute><Guide /></PrivateRoute>} />
+        <Route path="/logisticregression" element={<PrivateRoute><LogisticRegression /></PrivateRoute>} />
+        <Route path="/decisiontree" element={<PrivateRoute><DecisionTree /></PrivateRoute>} />
+        <Route path="/supportvectormachine" element={<PrivateRoute><SupportVectorMachine /></PrivateRoute>} />
+        <Route path="/knearestneighbors" element={<PrivateRoute><KNearestNeighbors /></PrivateRoute>} />
+        <Route path='/modellogisticregression' element={<PrivateRoute><ModelLogisticRegression /></PrivateRoute>} />
+        <Route path='/modeldecisiontree' element={<PrivateRoute><ModelDecisionTree /></PrivateRoute>} />
+        <Route path='/modelsupportvectormachine' element={<PrivateRoute><ModelSupportVectorMachine /></PrivateRoute>} />
+        <Route path='/modelknearestneighbors' element={<PrivateRoute><ModelKNearestNeighbors /></PrivateRoute>} />
+        <Route path="/claim" element={<PrivateRoute><Claim /></PrivateRoute>} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+      </Routes>
+    </AuthContextProvider>
   );
 }
 
