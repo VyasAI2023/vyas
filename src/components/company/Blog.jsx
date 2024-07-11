@@ -38,15 +38,15 @@ export const Blog = () => {
           <CardMedia
             component="img"
             height="200"
-            image="https://mechdb.com/wp-content/uploads/2024/01/Machine-Learning-Applications-in-Mechanical-Data-Analysis.webp"
+            image="https://miro.medium.com/v2/resize:fit:1358/0*euQhvApo72obOvIH.gif"
             alt="Model Image"
           />
           <CardContent className='pt-4 pb-2'>
             <Typography gutterBottom variant="h5" component="div" className='font-bold'>
-              Common Machine Learning Models
+              Common Machine Learning Models with some examples.
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Uncover the magic behind intelligent applications - explore how these models power your digital world! Dive into the algorithms and methodologies that drive transformative technologies across industries. From predicting user behavior to automating complex tasks, discover how machine learning models like logistic regression are shaping the future of artificial intelligence.
+              Uncover the magic behind intelligent applications - explore how these models power your digital world! Dive into the algorithms and methodologies that drive transformative technologies across industries. 
             </Typography>
           </CardContent>
           <CardActions className='justify-between px-4 pb-4'>
@@ -65,7 +65,7 @@ export const Blog = () => {
           <CardMedia
             component="img"
             height="200"
-            image="https://img.freepik.com/premium-photo/biometrics-technology-concept_670147-22042.jpg"
+            image="https://miro.medium.com/v2/resize:fit:800/0*5oHGMhJcDAXOnuHv.gif"
             alt="Model Image"
           />
           <CardContent className='pt-4 pb-2'>
@@ -92,7 +92,7 @@ export const Blog = () => {
           <CardMedia
             component="img"
             height="200"
-            image="https://th.bing.com/th/id/OIP.bjlsB9kZ3VjcE03ra0F1_gHaE8?rs=1&pid=ImgDetMain"
+            image="https://media0.giphy.com/media/Hrm0LJNRkPHDkLIHz9/giphy.gif?cid=6c09b952r8b9ycou4wcospw1nz5kq5l72ofqwrp3wr49s9p6&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g"
             alt="New Blog Image"
           />
           <CardContent className='pt-4 pb-2'>
@@ -119,7 +119,7 @@ export const Blog = () => {
           <CardMedia
             component="img"
             height="200"
-            image="https://th.bing.com/th/id/OIP.JfMZKvoriMih2Qg-E2TFQgHaE8?rs=1&pid=ImgDetMain"
+            image="https://cdn.dribbble.com/users/31818/screenshots/2091618/dribbb.gif"
             alt="NLP Image"
           />
           <CardContent className='pt-4 pb-2'>
