@@ -6,6 +6,7 @@ import hridyanshuPhoto from '../../assets/Passport_Photograph.jpg';
 const Blog1 = () => {
   const sectionsRef = useRef([]);
   const [activeSection, setActiveSection] = useState("");
+    
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,9 +31,18 @@ const Blog1 = () => {
     <div className="min-h-screen bg-gray-900 text-white">
       <Navbar />
       <div className="max-w-[1000px] mx-auto p-6">
-        <div className="text-center">
-          <h2 className="text-6xl text-green-400 font-extrabold mb-6">Demystifying Machine Learning: Code Examples for Common Models</h2>
-          <hr className="mt-4 w-48 mx-auto border-t-4 border-green-400" />
+        <div className="flex items-center">
+          {/* Hridyanshu's Photo */}
+          <div className="mr-8">
+            <img src={hridyanshuPhoto} alt="Hridyanshu" className="w-42 h-42 rounded-full shadow-lg" />
+            <p className="text-lg mt-4 text-center">Hridyanshu Slathia</p>
+          </div>
+
+          {/* Heading and Divider */}
+          <div className="text-center">
+            <h2 className="text-6xl text-green-400 font-extrabold mb-6">Demystifying Machine Learning: Code Examples for Common Models</h2>
+            <hr className="mt-4 w-48 mx-auto border-t-4 border-green-400" />
+          </div>
         </div>
       </div>
       <div className="container mx-auto mb-20 px-6 flex">
@@ -82,14 +92,6 @@ const Blog1 = () => {
                 </a>
               </li>
             </ul>
-          </div>
-          {/* Add your image below the content table */}
-          <div className="mt-4">
-            <img
-              className="w-full rounded-lg shadow-lg"
-              src={hridyanshuPhoto}
-              alt="Description of your image"
-            />
           </div>
         </div>
 
@@ -173,38 +175,40 @@ print("Cluster centers:", kmeans.cluster_centers_)`}
             </div>
             <div id="pca" ref={(el) => sectionsRef.current[5] = el}>
               <h4 className="text-2xl font-semibold mb-4">Principal Component Analysis (PCA)</h4>
-              <p className="mb-4">A dimensionality reduction technique, PCA finds patterns in data by identifying the directions (principal components) that capture the most variance.</p>
+              <p className="mb-4">Imagine simplifying a complex puzzle by focusing on the most important pieces. PCA identifies patterns in data, reducing its dimensionality while preserving its essence.</p>
               <pre className="bg-gray-700 p-4 rounded-lg text-white mb-6">
 {`from sklearn.decomposition import PCA
+import numpy as np
 
-# Sample data: points in 3D space
-X = [[1, 2, 3], [1, 4, 5], [1, 0, -1], [4, 2, 2], [4, 4, 4], [4, 0, 0]]
+# Sample data: 5D points
+X = np.array([[1, 2, 3, 4, 5], [5, 4, 3, 2, 1], [2, 3, 4, 5, 6]])
 
-# Create and train the model
+# Create and fit the PCA model
 pca = PCA(n_components=2)
-X_reduced = pca.fit_transform(X)
+pca.fit(X)
 
-# Print the reduced data
-print("Reduced data:", X_reduced)`}
+# Transform the data
+X_transformed = pca.transform(X)
+print("Transformed data:", X_transformed)`}
               </pre>
             </div>
             <div id="beyond-basics" ref={(el) => sectionsRef.current[6] = el}>
-              <h3 className="text-3xl font-bold mb-6">Beyond the Basics: The Ever-Evolving World of Machine Learning</h3>
+              <h3 className="text-3xl font-bold mb-6">Beyond the Basics: Where Learning Takes Flight</h3>
               <p className="mb-6">
-                The field of machine learning is constantly evolving, with new algorithms and techniques being developed. From deep learning models like Convolutional Neural Networks (CNNs) for image recognition to Reinforcement Learning for training agents to play games, the possibilities are endless. Keep exploring and stay updated with the latest advancements.
+                Armed with these foundational models, you're ready to embark on advanced journeys. Dive into neural networks, natural language processing (NLP), computer vision, and more. Here's a sneak peek into the possibilities:
               </p>
             </div>
             <div id="takeaway" ref={(el) => sectionsRef.current[7] = el}>
-              <h3 className="text-3xl font-bold mb-6">The Takeaway</h3>
+              <h3 className="text-3xl font-bold mb-6">The Takeaway: Empowerment Through Understanding</h3>
               <p className="mb-6">
-                Machine learning opens up a world of possibilities, offering innovative solutions to complex problems. With a solid understanding of these foundational models, you're well-equipped to embark on your own machine learning journey.
+                Machine learning isn't just about predicting outcomes—it's about unraveling mysteries, unlocking potential, and shaping a smarter future. Equip yourself with the tools and knowledge to make an impact.
               </p>
               <a href="/company/blog2" className="flex items-center text-green-400 hover:text-green-600 font-semibold">
                 Read Next Article
                 <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                 </svg>
-              </a>
+                </a>
             </div>
           </div>
         </div>

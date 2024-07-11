@@ -19,10 +19,11 @@ export const Blog = () => {
       setRefreshed(true);
       navigate(location.pathname, { replace: true });
     }
-  }, [refreshed, navigate, location]);
+  }, [refreshed, navigate, location.pathname]);
 
   const handleSelect = (blog) => {
     navigate(`/company/${blog}`);
+    window.scrollTo(0, 0); 
   };
 
   return (

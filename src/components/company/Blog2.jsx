@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import vanshikaPhoto from '../../assets/passport_vb.jpg'; // Adjust the path as necessary
 
 const Blog2 = () => {
   const sectionsRef = useRef([]);
@@ -29,9 +30,18 @@ const Blog2 = () => {
     <div className="min-h-screen bg-gray-900 text-white">
       <Navbar />
       <div className="max-w-[1000px] mx-auto p-6">
-        <div className="text-center">
-          <h2 className="text-6xl text-blue-400 font-extrabold mb-6">Exploring the Impact of Convolutional Neural Networks (CNNs)</h2>
-          <hr className="mt-4 w-48 mx-auto border-t-4 border-blue-400" />
+        <div className="flex items-center">
+          {/* Vanshika's Photo */}
+          <div className="mr-8">
+            <img src={vanshikaPhoto} alt="Vanshika Bakshi" className="w-42 h-42 shodow-lg rounded-full " />
+            <p className="text-lg mt-4 text-center">Vanshika Bakshi</p>
+          </div>
+
+          {/* Heading and Divider */}
+          <div className="text-center">
+            <h2 className="text-6xl text-blue-400 font-extrabold mb-6">Exploring the Impact of Convolutional Neural Networks (CNNs)</h2>
+            <hr className="mt-4 w-48 mx-auto border-t-4 border-blue-400" />
+          </div>
         </div>
       </div>
       <div className="container mx-auto mb-20 px-6 flex">
@@ -121,56 +131,41 @@ const Blog2 = () => {
               <div className="flex justify-center items-center feature-image mx-auto mb-6 bg-gray-800 rounded-lg overflow-hidden shadow-lg">
                 <img
                   className="w-full"
-                  src="https://www.researchgate.net/publication/357970884/figure/fig7/AS:1119433787478029@1643905221570/Representation-of-the-2D-convolutional-neural-network-The-network-is-composed-of-two.ppm"
+                  src="https://miro.medium.com/max/1034/1*XbuW8WuRrAY5pC4t-9DZAQ.jpeg"
                   alt="Training CNNs"
                 />
               </div>
-              <p className="mb-4">Training a CNN involves these steps:</p>
-              <ul className="list-disc list-inside mb-6">
-                <li><strong>Forward Propagation</strong>: The input image passes through the convolutional, activation, and pooling layers, generating feature maps at each stage. The output then goes through the fully connected layers to produce the final predictions.</li>
-                <li><strong>Loss Calculation</strong>: The predicted output is compared to the true labels using a loss function, like cross-entropy loss for classification tasks.</li>
-                <li><strong>Backpropagation</strong>: Gradients of the loss function with respect to the weights are calculated and propagated backward through the network. Optimization algorithms, such as stochastic gradient descent (SGD), update the weights to minimize the loss.</li>
-              </ul>
+              <p className="mb-4">Training CNNs involves feeding labeled data into the network, adjusting weights and biases during backpropagation to minimize the difference between predicted and actual outputs. Techniques like transfer learning and data augmentation are often used to improve model performance.</p>
             </div>
             <div id="applications-cnns" ref={(el) => sectionsRef.current[4] = el}>
               <h4 className="text-2xl font-semibold mb-4">Applications of CNNs</h4>
-              <div className="flex justify-center items-center feature-image mx-auto mb-6 bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                <img
+              <img
                   className="w-full"
-                  src="https://ig-s.co.uk/wp-content/uploads/2020/12/AdobeStock_323256831-1080x675.jpg"
-                  alt="Applications of CNNs"
+                  src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*BIpRgx5FsEMhr1k2EqBKFg.gif"
+                  alt="Application of CNNs"
                 />
-              </div>
-              <p className="mb-4">CNNs have made a significant impact across various fields:</p>
+              <p className="mb-4">CNNs have a wide range of applications across various industries:</p>
               <ul className="list-disc list-inside mb-6">
-                <li><strong>Image Classification</strong>: CNNs are excellent at classifying images into different categories. They have been used in projects like ImageNet, achieving top accuracy in recognizing thousands of object classes.</li>
-                <li><strong>Object Detection</strong>: CNNs drive object detection systems that find and identify multiple objects within an image. Applications include surveillance, autonomous vehicles, and augmented reality.</li>
-                <li><strong>Semantic Segmentation</strong>: In semantic segmentation, CNNs classify each pixel in an image into predefined categories. This is crucial in medical imaging for identifying different tissues and in self-driving cars for recognizing road signs and obstacles.</li>
-                <li><strong>Facial Recognition</strong>: CNNs have greatly enhanced facial recognition systems, allowing secure authentication in devices and applications. They can detect and identify faces with high accuracy, even in difficult conditions.</li>
-                <li><strong>Image Generation</strong>: Generative Adversarial Networks (GANs), which use CNNs, can create realistic images from noise. This has applications in art, fashion, and data augmentation.</li>
+                <li><strong>Image Recognition</strong>: Identifying objects, faces, and scenes in images.</li>
+                <li><strong>Medical Imaging</strong>: Diagnosing diseases from medical scans like X-rays and MRIs.</li>
+                <li><strong>Autonomous Vehicles</strong>: Analyzing surroundings for navigation and hazard detection.</li>
+                <li><strong>Natural Language Processing (NLP)</strong>: Processing text and sentiment analysis.</li>
+                <li><strong>Video Analysis</strong>: Understanding and classifying video content.</li>
               </ul>
             </div>
             <div id="challenges-future" ref={(el) => sectionsRef.current[5] = el}>
               <h4 className="text-2xl font-semibold mb-4">Challenges and Future Directions</h4>
-              <p className="mb-4">Despite their success, CNNs face several challenges:</p>
-              <ul className="list-disc list-inside mb-6">
-                <li><strong>Computational Demand</strong>: Training deep CNNs requires significant computational resources and memory.</li>
-                <li><strong>Data Requirements</strong>: CNNs often need large labeled datasets for effective training, which can be hard to collect.</li>
-                <li><strong>Interpretability</strong>: Understanding how CNNs make decisions can be difficult due to their complex architectures.</li>
-              </ul>
-              <p className="mb-6">Future research is focused on overcoming these challenges through advancements in hardware, data-efficient learning techniques, and explainable AI.</p>
+              <p className="mb-4">Despite their successes, CNNs face challenges such as interpretability, scalability, and biases in training data. Future research is focused on improving model efficiency, handling larger datasets, and developing more transparent AI systems.</p>
             </div>
             <div id="conclusion" ref={(el) => sectionsRef.current[6] = el}>
               <h3 className="text-3xl font-bold mb-6">Conclusion</h3>
-              <p className="mb-6">
-                Convolutional Neural Networks have revolutionized computer vision and beyond, enabling machines to interpret visual data with impressive accuracy. As technology advances, CNNs will continue to be vital in developing innovative solutions to complex visual recognition problems.
-              </p>
+              <p className="mb-4">Convolutional Neural Networks (CNNs) have revolutionized machine learning by enabling computers to interpret visual data with remarkable accuracy. As we continue to advance in AI and deep learning, CNNs will play a crucial role in shaping the future of technology across various domains.</p>
               <a href="/company/blog3" className="flex items-center text-green-400 hover:text-green-600 font-semibold">
                 Read Next Article
                 <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                 </svg>
-              </a>
+                </a>
             </div>
           </div>
         </div>
@@ -178,6 +173,6 @@ const Blog2 = () => {
       <Footer />
     </div>
   );
-}
+};
 
 export default Blog2;
