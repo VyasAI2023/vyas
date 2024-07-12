@@ -8,24 +8,7 @@ const Blog1 = () => {
   const [activeSection, setActiveSection] = useState("");
     
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
-
-    sectionsRef.current.forEach((section) => observer.observe(section));
-
-    return () => {
-      sectionsRef.current.forEach((section) => observer.unobserve(section));
-    };
-  }, []);
+  
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">

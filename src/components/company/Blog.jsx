@@ -12,18 +12,18 @@ import { useNavigate, useLocation } from 'react-router-dom';
 export const Blog = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [refreshed, setRefreshed] = useState(false);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   useEffect(() => {
-    if (!refreshed) {
-      setRefreshed(true);
-      navigate(location.pathname, { replace: true });
+    if (isFirstLoad) {
+      setIsFirstLoad(false);
+      // Perform any initial data fetch or setup here if needed
     }
-  }, [refreshed, navigate, location.pathname]);
+  }, [isFirstLoad]);
 
   const handleSelect = (blog) => {
     navigate(`/company/${blog}`);
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -46,7 +46,7 @@ export const Blog = () => {
               Common Machine Learning Models with some examples.
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Uncover the magic behind intelligent applications - explore how these models power your digital world! Dive into the algorithms and methodologies that drive transformative technologies across industries. 
+              Uncover the magic behind intelligent applications - explore how these models power your digital world! Dive into the algorithms and methodologies that drive transformative technologies across industries.
             </Typography>
           </CardContent>
           <CardActions className='justify-between px-4 pb-4'>
@@ -107,7 +107,7 @@ export const Blog = () => {
             <div className='flex items-center text-gray-600'>
               <time dateTime="2024-07-06" className="text-sm mr-2">July 8, 2024</time>
               <div className="border-l-2 h-4 mx-2"></div>
-              <a className="text-sm" href="https://www.linkedin.com/in/shagunmengi/">Shagun Mengi BTech CSE </a>
+              <a className="text-sm" href="https://www.linkedin.com/in/shagunmengi/">Shagun Mengi BTech CSE</a>
             </div>
             <Button variant="contained" color="primary" onClick={() => handleSelect('blog3')}>
               Read More
@@ -134,7 +134,7 @@ export const Blog = () => {
             <div className='flex items-center text-gray-600'>
               <time dateTime="2024-07-08" className="text-sm mr-2">July 8, 2024</time>
               <div className="border-l-2 h-4 mx-2"></div>
-              <a className="text-sm" href="https://www.linkedin.com/in/anirudh-salaria-0953b1247/">Anirudh Salaria BTech CSE </a>
+              <a className="text-sm" href="https://www.linkedin.com/in/anirudh-salaria-0953b1247/">Anirudh Salaria BTech CSE</a>
             </div>
             <Button variant="contained" color="primary" onClick={() => handleSelect('blog4')}>
               Read More
