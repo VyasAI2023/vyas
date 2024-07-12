@@ -47,20 +47,20 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
-        <Route path="/Modelpage" element={<PrivateRoute><Modelpage /></PrivateRoute>} />
+        <Route path="/Modelpage" element={<Modelpage />} />
         <Route path="/Upload" element={<PrivateRoute><Upload /></PrivateRoute>} />
-        <Route path="/company/About" element={<PrivateRoute><About /></PrivateRoute>} />
-        <Route path="/company/blog" element={<PrivateRoute><Blog /></PrivateRoute>} />
-        <Route path="/pricing" element={<PrivateRoute><Pricing /></PrivateRoute>} />
-        <Route path="/company/blog1" element={<PrivateRoute><Blog1 /></PrivateRoute>} />
-        <Route path="/company/blog2" element={<PrivateRoute><Blog2 /></PrivateRoute>} />
-        <Route path="/company/blog3" element={<PrivateRoute><Blog3 /></PrivateRoute>} />
-        <Route path="/company/blog4" element={<PrivateRoute><Blog4 /></PrivateRoute>} />
-        <Route path="/company/careers" element={<PrivateRoute><Career /></PrivateRoute>} />
-        <Route path="/company/jobs" element={<PrivateRoute><Jobs /></PrivateRoute>} />
+        <Route path="/company/About" element={<About />} />
+        <Route path="/company/blog" element={<Blog />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/company/blog1" element={<Blog1 />} />
+        <Route path="/company/blog2" element={<Blog2 />} />
+        <Route path="/company/blog3" element={<Blog3 />} />
+        <Route path="/company/blog4" element={<Blog4 />} />
+        <Route path="/company/careers" element={<Career />} />
+        <Route path="/company/jobs" element={<Jobs />} />
         <Route path="/policy" element={<PrivateRoute><Policy /></PrivateRoute>} />
         <Route path="/terms" element={<PrivateRoute><Terms /></PrivateRoute>} />
-        <Route path="/documentation" element={<PrivateRoute><Documentation /></PrivateRoute>} />
+        <Route path="/documentation" element={<Documentation />} />
         <Route path="/status" element={<PrivateRoute><StatusPage /></PrivateRoute>} />
         <Route path="/store" element={<PrivateRoute><Store /></PrivateRoute>} />
         <Route path="/guide" element={<PrivateRoute><Guide /></PrivateRoute>} />
