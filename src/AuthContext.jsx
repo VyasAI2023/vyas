@@ -20,8 +20,8 @@ export const AuthContextProvider = ({ children }) => {
       setCurrentUser(user);
       setLoading(false);
       const path = location.pathname.toLowerCase();
-      if (!user && path !== '/login' && path !== '/signup' && path!== '/' && path != '/forgotpassword' &&  path != '/company/blog' && path != '/company/blog1' && path != '/company/blog2' && path != '/company/blog3' && path != '/company/blog4' && path != '/company/jobs' && path != '/company/careers' && path != '/documentation' && path != '/pricing' && path != '/contact' && path != '/company/about' && path != '/modelpage') {
-        navigate('/login');
+      if (!user && path !== '/login' && path !== '/signup' && path!== '/' && path != '/forgotpassword' &&  path != '/company/blog' && path != '/company/blog1' && path != '/company/blog2' && path != '/company/blog3' && path != '/company/blog4' && path != '/company/jobs' && path != '/company/careers' && path != '/documentation' && path != '/pricing' && path != '/contact' && path != '/company/about' && path != '/modelpage' && path != '/modellogisticregression' && path != '/modeldecisiontree' && path != '/modelsupportvectormachine' && path != '/modelknearestneighbors') {
+        navigate('/signup');
       }
     });
 

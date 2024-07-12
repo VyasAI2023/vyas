@@ -68,10 +68,10 @@ function App() {
         <Route path="/decisiontree" element={<PrivateRoute><DecisionTree /></PrivateRoute>} />
         <Route path="/supportvectormachine" element={<PrivateRoute><SupportVectorMachine /></PrivateRoute>} />
         <Route path="/knearestneighbors" element={<PrivateRoute><KNearestNeighbors /></PrivateRoute>} />
-        <Route path='/modellogisticregression' element={<PrivateRoute><ModelLogisticRegression /></PrivateRoute>} />
-        <Route path='/modeldecisiontree' element={<PrivateRoute><ModelDecisionTree /></PrivateRoute>} />
-        <Route path='/modelsupportvectormachine' element={<PrivateRoute><ModelSupportVectorMachine /></PrivateRoute>} />
-        <Route path='/modelknearestneighbors' element={<PrivateRoute><ModelKNearestNeighbors /></PrivateRoute>} />
+        <Route path='/modellogisticregression' element={<ModelLogisticRegression />} />
+        <Route path='/modeldecisiontree' element={<ModelDecisionTree />} />
+        <Route path='/modelsupportvectormachine' element={<ModelSupportVectorMachine />} />
+        <Route path='/modelknearestneighbors' element={<ModelKNearestNeighbors />} />
         <Route path="/claim" element={<PrivateRoute><Claim /></PrivateRoute>} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
       </Routes>
