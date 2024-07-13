@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './loginsignup.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { useAuth } from '../AuthContext';
+import { FaEnvelope } from 'react-icons/fa'; // Importing envelope icon
 
 const MainPage = () => {
   const { handleGoogleSignIn } = useAuth();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleGoogleButtonClick = async () => {
     try {
+      setLoading(true);
+      setError('');
       await handleGoogleSignIn();
       navigate('/profile'); // Redirect after successful Google sign-in
     } catch (error) {
+      setError('Google Sign-In Error');
       console.error('Google Sign-In Error:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -32,15 +40,30 @@ const MainPage = () => {
           <div className='underline'></div>
         </div>
         <div className="auth-options">
-          <button type="button" onClick={handleGoogleButtonClick} className='auth-button google'>
-            <img src="data:image/png;base64,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" alt="Google logo" />
+          <button
+            type="button"
+            onClick={handleGoogleButtonClick}
+            className={`auth-button google ${loading ? 'loading' : ''}`}
+            disabled={loading}
+          >
+            {loading && <span className="spinner"></span>}
+            <img
+              src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000"
+              alt="Google Icon"
+              className="google-icon"
+            />
             Continue with Google
           </button>
-          <button type="button" onClick={handleEmailButtonClick} className='auth-button email'>
-            <img src="data:image/png;base64,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" alt="Email logo" />
+          <button
+            type="button"
+            onClick={handleEmailButtonClick}
+            className="auth-button email"
+          >
+            <FaEnvelope className="email-icon" /> {/* Envelope icon */}
             Continue with Email
           </button>
         </div>
+        {error && <p className="error-message">{error}</p>}
       </div>
       <Footer />
     </div>
