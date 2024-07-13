@@ -1,7 +1,6 @@
-// AuthContext.jsx
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { auth } from './firebase';
-import { onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } from 'firebase/auth';
+import { onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const AuthContext = createContext();
@@ -21,7 +20,7 @@ export const AuthContextProvider = ({ children }) => {
       setCurrentUser(user);
       setLoading(false);
       const path = location.pathname.toLowerCase();
-      if (!user && path !== '/login' && path !== '/signup'  && path !== '/main' && path !== '/terms' && path !== '/policy' && path !== '/' && path !== '/forgotpassword'  && path !== '/documentation'  && path !== '/pricing'  && path !== '/contact' && !path.startsWith('/company') && !path.startsWith('/model')) {
+      if (!user && path !== '/login' && path !== '/signup' && path !== '/main' && path !== '/terms' && path !== '/policy' && path !== '/' && path !== '/forgotpassword' && path !== '/documentation' && path !== '/pricing' && path !== '/contact' && !path.startsWith('/company') && !path.startsWith('/model')) {
         navigate('/signup');
       }
     });
@@ -32,10 +31,9 @@ export const AuthContextProvider = ({ children }) => {
   const handleGoogleSignIn = async () => {
     const provider = new GoogleAuthProvider();
     try {
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      console.log('Logged in user:', user);
-      // Handle post Google sign-in logic if needed
+      // Open Google's authentication popup
+      await signInWithPopup(auth, provider);
+      // No need to navigate here, let onAuthStateChanged handle it
     } catch (error) {
       alert(`Error signing in with Google: ${error.message}`);
       console.error('Google Sign-In Error:', error);
@@ -55,8 +53,6 @@ export const AuthContextProvider = ({ children }) => {
     }
   };
 
-  // Other functions like handleLogout, createUserWithEmailAndPassword, etc.
-
   const handleEmailSignup = async (email, password, name) => {
     try {
       const result = await createUserWithEmailAndPassword(auth, email, password);
@@ -69,8 +65,9 @@ export const AuthContextProvider = ({ children }) => {
       throw error;
     }
   };
+
   return (
-    <AuthContext.Provider value={{ currentUser, handleGoogleSignIn, handleEmailPasswordSignIn }}>
+    <AuthContext.Provider value={{ currentUser, handleGoogleSignIn, handleEmailPasswordSignIn, handleEmailSignup }}>
       {!loading && children}
     </AuthContext.Provider>
   );
