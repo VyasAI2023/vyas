@@ -44,7 +44,7 @@ const Signup = () => {
           {error && <p className="error">{error}</p>}
           <div className='inputs'>
             <div className='input'>
-              <img src={person} alt='' />
+              <img src={person} alt='Person Icon' />
               <input
                 type='text'
                 placeholder='Name'
@@ -53,7 +53,7 @@ const Signup = () => {
               />
             </div>
             <div className='input'>
-              <img src={emails} alt='' />
+              <img src={emails} alt='Email Icon' />
               <input
                 type='email'
                 placeholder='Email ID'
@@ -62,7 +62,7 @@ const Signup = () => {
               />
             </div>
             <div className='input'>
-              <img src={passwords} alt='' />
+              <img src={passwords} alt='Password Icon' />
               <input
                 type='password'
                 placeholder='Password'
@@ -71,6 +71,11 @@ const Signup = () => {
               />
             </div>
           </div>
+          <p className="terms">
+            By continuing, you are indicating that you accept our 
+            <a href="/terms"> Terms of Service</a> and 
+            <a href="/policy"> Privacy Policy</a>.
+          </p>
           <div className='submit-container'>
             <Link to='/login' className='login-btn'>Login</Link>
             <button type='submit' className='sub'>Submit</button>

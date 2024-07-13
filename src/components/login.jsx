@@ -58,7 +58,7 @@ const Login = () => {
             Lost Password? <span onClick={() => navigate('/ForgotPassword')} className="click-here">Click Here!</span>
           </div>
           <div className="submit-container">
-            <button type="button" onClick={() => navigate('/Signup')} className='gray'>Sign Up</button>
+            <button type="button" onClick={() => navigate('/main')} className='gray main-page-btn'>Main Page</button>
             <button type="submit" className='sub'>Login</button>
           </div>
         </form>

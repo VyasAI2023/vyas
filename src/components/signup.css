@@ -36,6 +36,13 @@ body {
     border-radius: 9px;
 }
 
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
 .inputs {
     margin-top: 55px;
     display: flex;
@@ -67,16 +74,20 @@ body {
     font-size: 19px;
 }
 
-.forget-password {
+.terms {
     padding-left: 62px;
     margin-top: 27px;
     color: #797979;
     font-size: 18px;
 }
 
-.forget-password span {
+.terms a {
     color: rgb(0, 223, 154);
-    cursor: pointer;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
 }
 
 .submit-container {

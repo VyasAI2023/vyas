@@ -128,7 +128,7 @@ const Navbar = () => {
         ) : (
           location.pathname === "/" && ( // Conditionally render Login button only on home page
             <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
-              <Link to="/login">Login</Link>
+              <Link to="/main">Login</Link>
             </li>
           )
         )}

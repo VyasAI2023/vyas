@@ -35,6 +35,7 @@ import Blog1 from "./components/company/Blog1";
 import ForgotPassword from "./components/ForgotPassword";
 import PrivateRoute from "./PrivateRoute";
 import { AuthContextProvider } from "./AuthContext";
+import MainPage from "./components/MainPage";
 
 function App() {
   return (
@@ -58,8 +59,8 @@ function App() {
         <Route path="/company/blog4" element={<Blog4 />} />
         <Route path="/company/careers" element={<Career />} />
         <Route path="/company/jobs" element={<Jobs />} />
-        <Route path="/policy" element={<PrivateRoute><Policy /></PrivateRoute>} />
-        <Route path="/terms" element={<PrivateRoute><Terms /></PrivateRoute>} />
+        <Route path="/policy" element={<Policy />} />
+        <Route path="/terms" element={<Terms />} />
         <Route path="/documentation" element={<Documentation />} />
         <Route path="/status" element={<PrivateRoute><StatusPage /></PrivateRoute>} />
         <Route path="/store" element={<PrivateRoute><Store /></PrivateRoute>} />
@@ -74,6 +75,7 @@ function App() {
         <Route path='/modelknearestneighbors' element={<ModelKNearestNeighbors />} />
         <Route path="/claim" element={<PrivateRoute><Claim /></PrivateRoute>} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/main" element={<MainPage />} />
       </Routes>
     </AuthContextProvider>
   );
