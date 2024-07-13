@@ -4,7 +4,7 @@ import './loginsignup.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { useAuth } from '../AuthContext';
-import { FaEnvelope } from 'react-icons/fa'; // Importing envelope icon
+import { FaEnvelope } from 'react-icons/fa';
 
 const MainPage = () => {
   const { handleGoogleSignIn } = useAuth();
@@ -16,7 +16,9 @@ const MainPage = () => {
     try {
       setLoading(true);
       setError('');
+      console.log('Attempting Google sign-in...');
       await handleGoogleSignIn();
+      console.log('Google sign-in successful.'); // Check if this message appears
       navigate('/profile'); // Redirect after successful Google sign-in
     } catch (error) {
       setError('Google Sign-In Error');
@@ -59,7 +61,7 @@ const MainPage = () => {
             onClick={handleEmailButtonClick}
             className="auth-button email"
           >
-            <FaEnvelope className="email-icon" /> {/* Envelope icon */}
+            <FaEnvelope className="email-icon" />
             Continue with Email
           </button>
         </div>
