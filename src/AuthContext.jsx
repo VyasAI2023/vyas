@@ -21,7 +21,7 @@ export const AuthContextProvider = ({ children }) => {
       setLoading(false);
       const path = location.pathname.toLowerCase();
       if (!user && path !== '/login' && path !== '/signup' && path !== '/main' && path !== '/terms' && path !== '/policy' && path !== '/' && path !== '/forgotpassword' && path !== '/documentation' && path !== '/pricing' && path !== '/contact' && !path.startsWith('/company') && !path.startsWith('/model')) {
-        navigate('/signup');
+        navigate('/main');
       }
     });
 

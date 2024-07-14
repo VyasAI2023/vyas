@@ -74,9 +74,6 @@ const Footer = () => {
             <li className="py-2 text-sm">
               <Link onClick={scrollToTop} to="/guide" >Guides</Link>
             </li>
-            <li className="py-2 text-sm">
-              <Link onClick={scrollToTop} to="/login" >Sign in/Sign up</Link>
-            </li>
           </ul>
         </div>
         <div>

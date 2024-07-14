@@ -11,7 +11,7 @@ const Navbar = () => {
   const [showCompanyCard, setShowCompanyCard] = useState(false);
   const [showResourcesCard, setShowResourcesCard] = useState(false);
   const [showModelCard, setShowModelCard] = useState(false);
-  
+
   const location = useLocation(); // Hook to get current path
   const navigate = useNavigate();
 
@@ -40,12 +40,8 @@ const Navbar = () => {
     }
   };
 
-  const handleHomeClick = async () => {
-    if (currentUser) {
-      await handleLogout();
-    } else {
-      navigate("/");
-    }
+  const handleHomeClick = () => {
+    navigate("/"); // Only navigate to the home page
   };
 
   return (
@@ -121,10 +117,15 @@ const Navbar = () => {
         <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
           <Link to="/pricing">Pricing</Link>
         </li>
-        {currentUser ? ( // Conditionally render Logout button if user is logged in
-          <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline" onClick={handleLogout}>
-            Logout
-          </li>
+        {currentUser ? ( // Conditionally render Profile and Logout buttons if user is logged in
+          <>
+            <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
+              <Link to="/profile">Train</Link>
+            </li>
+            <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline" onClick={handleLogout}>
+              Logout
+            </li>
+          </>
         ) : (
           location.pathname === "/" && ( // Conditionally render Login button only on home page
             <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
@@ -183,10 +184,15 @@ const Navbar = () => {
         <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
           <Link to="/pricing">Pricing</Link>
         </li>
-        {currentUser ? ( // Conditionally render Logout button if user is logged in
-          <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline" onClick={handleLogout}>
-            Logout
-          </li>
+        {currentUser ? ( // Conditionally render Profile and Logout buttons if user is logged in
+          <>
+            <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">
+              <Link to="/profile">Train</Link>
+            </li>
+            <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline" onClick={handleLogout}>
+              Logout
+            </li>
+          </>
         ) : (
           location.pathname === "/" && ( // Conditionally render Login button only on home page
             <li className="p-4 cursor-pointer hover:text-gray-500 hover:underline">

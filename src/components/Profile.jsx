@@ -167,8 +167,8 @@ const Profile = () => {
         ></div>
       </div>
       <div className='profile-details' style={{ padding: '20px' }}>
-        <h1 className='welcome-text' style={{ color: '#00df9a', textAlign: 'center', marginBottom: '20px' }}>
-          Welcome, User!
+        <h1 className='welcome-text' style={{ color: 'lightgray', textAlign: 'center', marginBottom: '20px' }}>
+          Select the model on which you want to train your dataset.
         </h1>
         <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-6'>
           {models.map((model, index) => (
