@@ -1,27 +1,135 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import videoBackground from '../assets/13235248-uhd_3840_2160_24fps.mp4';
 
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: 'mooth'
   });
+};
+
+const NetworkBackground = () => {
+  const canvasRef = React.createRef();
+
+  React.useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+
+    // Set canvas size
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Node class and animation logic
+    const nodes = [];
+    const nodeCount = 50;
+    const connectionDistance = 150;
+    const cursorConnectionDistance = 200;
+
+    let mouse = {
+      x: undefined,
+      y: undefined
+    };
+
+    class Node {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = 2;
+        this.speedX = (Math.random() - 0.5) * 2;
+        this.speedY = (Math.random() - 0.5) * 2;
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0, 255, 255, 0.8)';
+        ctx.fill();
+      }
+    }
+
+    // Initialize nodes
+    for (let i = 0; i < nodeCount; i++) {
+      nodes.push(new Node());
+    }
+
+    // Animation function
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < nodes.length; i++) {
+        nodes[i].update();
+        nodes[i].draw();
+
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < connectionDistance) {
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.strokeStyle = `rgba(0, 255, 255, ${1 - distance / connectionDistance})`;
+            ctx.stroke();
+          }
+        }
+
+        if (mouse.x && mouse.y) {
+          const dx = nodes[i].x - mouse.x;
+          const dy = nodes[i].y - mouse.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < cursorConnectionDistance) {
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = `rgba(0, 255, 255, ${1 - distance / cursorConnectionDistance})`;
+            ctx.stroke();
+          }
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    // Start animation
+    animate();
+
+    // Mouse move event listener
+    const handleMouseMove = (event) => {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }} />;
 };
 
 const Newsletter = () => {
   return (
     <div className="relative overflow-hidden">
-      <video
-        autoPlay
-        loop
-        muted
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        style={{ zIndex: '-1' }}
-      >
-        <source src={videoBackground} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <NetworkBackground />
       <div className="relative z-10">
         <div className="max-w-[1240px] mx-auto px-4 py-16 grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 my-4 text-white">
