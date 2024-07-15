@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactTyped }from "react-typed";
+import {ReactTyped } from "react-typed"; // Correct import
 import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
@@ -12,30 +12,30 @@ const Hero = () => {
   return (
     <div className="relative text-white h-screen overflow-hidden">
       <NetworkBackground />
-      <div className="video-overlay z-1"></div>
-      <div className="flex items-center justify-center h-full z-10 px-4">
-        <div className="text-center max-w-[800px] mx-auto content z-20">
-          <p className="text-[#00df9a] font-bold p-2 z-20">GROWING WITH VYAS.AI</p>
-          <h1 className="md:text-7xl sm:text-6xl text-4xl font-bold md:py-6 z-20">
+      <div className="video-overlay absolute inset-0 bg-black opacity-50 z-10"></div>
+      <div className="flex items-center justify-center h-full z-20 px-4">
+        <div className="text-center max-w-[800px] mx-auto content z-30">
+          <p className="text-[#00df9a] font-bold p-2 z-30">GROWING WITH VYAS.AI</p>
+          <h1 className="md:text-7xl sm:text-6xl text-4xl font-bold md:py-6 z-30">
             Grow with AI.
           </h1>
-          <div className="flex flex-col md:flex-row justify-center items-center z-20">
-            <p className="md:text-5xl sm:text-4xl text-xl font-bold py-4 z-20">
+          <div className="flex flex-col md:flex-row justify-center items-center z-30">
+            <p className="md:text-5xl sm:text-4xl text-xl font-bold py-4 z-30">
               Fast, flexible financing for
             </p>
             <ReactTyped
-              className="text-xl md:text-5xl sm:text-4xl font-bold md:pl-4 pl-2 text-gray-500 z-20"
+              className="text-xl md:text-5xl sm:text-4xl font-bold md:pl-4 pl-2 text-gray-500 z-30"
               strings={["MLaaS", "Models", "SaaS"]}
               typeSpeed={120}
               backSpeed={140}
               loop
             />
           </div>
-          <p className="md:text-2xl text-xl font-bold text-gray-500 z-20">
+          <p className="md:text-2xl text-xl font-bold text-gray-500 z-30">
             Everything you need to build and deploy ML Models
           </p>
           <button 
-            className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black z-20"
+            className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black z-30"
             onClick={handleGetStarted}
           >
             Get Started
@@ -62,8 +62,8 @@ const NetworkBackground = () => {
     window.addEventListener('resize', resizeCanvas);
 
     const nodes = [];
-    const nodeCount = 50;
-    const connectionDistance = 150;
+    const nodeCount = window.innerWidth < 768 ? 20 : 50; // Fewer nodes for mobile
+    const connectionDistance = window.innerWidth < 768 ? 100 : 150; // Shorter distance for mobile
     const cursorConnectionDistance = 200;
 
     let mouse = {
