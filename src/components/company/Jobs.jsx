@@ -8,49 +8,49 @@ const jobList = [
     title: "Full Stack Universe Engineer",
     location: "Remote",
     department: "Engineering",
-    link: "https://docs.google.com/forms/d/e/your_form_id/viewform", // Replace with your actual form URL
+    link: "https://forms.gle/TPtuYinBXjsoFZ277", // Replace with your actual form URL
   },
   {
     title: "Account Executive",
     location: "Remote",
     department: "Sales",
-    link: "https://docs.google.com/forms/d/e/your_form_id/viewform",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277",
   },
   {
     title: "Applied Machine Learning Research Engineer",
     location: "Remote",
     department: "Engineering",
-    link: "https://docs.google.com/forms/d/e/your_form_id/viewform",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277",
   },
   {
     title: "Field Engineer",
     location: "Remote",
     department: "Customer Success",
-    link: "https://docs.google.com/forms/d/e/your_form_id/viewform",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277",
   },
   {
     title: "Full Stack Engineer",
     location: "Remote",
     department: "Engineering",
-    link: "https://docs.google.com/forms/d/e/your_form_id/viewform",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277",
   },
   {
     title: "Sales Development Representative",
     location: "Remote",
     department: "Sales",
-    link: "https://docs.google.com/forms/d/e/your_form_id/viewform",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277",
   },
   {
     title: "Former Founders",
     location: "Remote",
     department: "General Inquiry",
-    link: "https://docs.google.com/forms/d/e/your_form_id/viewform",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277",
   },
   {
     title: "Full Stack Machine Learning Engineer",
     location: "Remote",
     department: "Engineering",
-    link: "https://docs.google.com/forms/d/e/your_form_id/viewform",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277",
   },
 ];
 
