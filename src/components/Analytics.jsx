@@ -72,7 +72,7 @@ const NetworkBackground = () => {
 
     // Node class and animation logic
     const nodes = [];
-    const nodeCount = 50;
+    const nodeCount = 30;  // Reduced number of nodes
     const connectionDistance = 150;
     const cursorConnectionDistance = 200;
 

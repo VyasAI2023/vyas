@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: 'mooth'
+    behavior: 'smooth'
   });
 };
 
@@ -26,7 +26,7 @@ const NetworkBackground = () => {
 
     // Node class and animation logic
     const nodes = [];
-    const nodeCount = 50;
+    const nodeCount = 30; // Reduced node count
     const connectionDistance = 150;
     const cursorConnectionDistance = 200;
 
