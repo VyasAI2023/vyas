@@ -20,7 +20,7 @@ const About = () => {
       </div>
 
       {/* Navbar */}
-      <div className="relative z-20">
+      <div className="relative z-30">
         <Navbar />
       </div>
 
