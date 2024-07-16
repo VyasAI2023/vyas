@@ -40,7 +40,7 @@ const modelData = [
   {
     title: "Support Vector Machine",
     description: "A supervised learning model that analyzes data for classification and regression analysis.",
-    image: "https://img.icons8.com/?size=100&id=RnFgTITHTF9X&format=png&color=000000",
+    image: "https://img.icons8.com/?size=100&id=6nsw3h9gk8M8&format=png&color=000000",
     category: "Classification",
     link: "/modelsupportvectormachine"
   },
