@@ -62,8 +62,8 @@ const NetworkBackground = () => {
     window.addEventListener('resize', resizeCanvas);
 
     const nodes = [];
-    const nodeCount = window.innerWidth < 768 ? 20 : 50; // Fewer nodes for mobile
-    const connectionDistance = window.innerWidth < 768 ? 100 : 150; // Shorter distance for mobile
+    const nodeCount = 30;  // Reduced number of nodes
+    const connectionDistance = 150;
     const cursorConnectionDistance = 200;
 
     let mouse = {
