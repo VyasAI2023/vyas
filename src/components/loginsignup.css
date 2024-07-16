@@ -161,4 +161,7 @@ body {
   background: linear-gradient(45deg, #616161, #757575);
   border-color: #2c2c2c; /* Darker border color on hover */
 }
-
+.forget-password-container {
+  margin-top: 10px;
+  text-align: center;
+}

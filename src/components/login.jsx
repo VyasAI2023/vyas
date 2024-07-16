@@ -54,8 +54,9 @@ const Login = () => {
               required
             />
           </div>
-          <div className="forget-password">
-            Lost Password? <span onClick={() => navigate('/ForgotPassword')} className="click-here">Click Here!</span>
+          <div className="forget-password-container">
+            <span style={{ color: '#666' }}>Lost Password? </span>
+            <span onClick={() => navigate('/ForgotPassword')} style={{ color: 'green', cursor: 'pointer' }}>Click Here!</span>
           </div>
           <div className="submit-container">
             <button type="button" onClick={() => navigate('/main')} className='gray main-page-btn'>Main Page</button>
