@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import contactPhoto from '../assets/Contact.jpg';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,15 +18,26 @@ const Contact = () => {
       return;
     }
     setFormData({
-      ...formData,
+     ...formData,
       [name]: value
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+    emailjs.send('service_e5suxzn', 'template_aabwdph', formData, 'bw44SJOplmkAq90G4')
+     .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Email sent successfully! We will contact you shortly');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      }, (error) => {
+        console.log('FAILED...', error);
+      });
   };
 
   return (
@@ -97,14 +109,12 @@ const Contact = () => {
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#00df9a] focus:border-[#00df9a] sm:text-sm text-black bg-gray-300"
                 ></textarea>
               </div>
-              <br>
-              </br>
+              <br />
               <div className="flex justify-center">
                 <button
                   type="submit"
-                  className="w-50 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-[#00df9a] hover:bg-[#00c982] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00df9a]"
+                  className="w-50 inline-flex justify-center py-2 px-4border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-[#00df9a] hover:bg-[#00c982] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00df9a]"
                 >
-                  
                   Submit
                 </button>
               </div>
