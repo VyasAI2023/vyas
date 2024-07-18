@@ -115,7 +115,7 @@ const AddBlog = () => {
           sx={styles.textField}
         />
         <TextField
-          label="Date"
+        //   label="Date"
           name="date"
           value={blogData.date}
           onChange={handleChange}

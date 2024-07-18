@@ -50,7 +50,7 @@ const ModelNaiveBayes = () => {
                   <h2 className="text-xl font-bold text-white uppercase px-4 pt-4">Training Options</h2>
                   <ul className="ml-2 space-y-2">
                     <li>
-                      <a href="https://colab.research.google.com/drive/1lSNa0XI6_I56IkdvmfjszNwIdk1rKUEn#scrollTo=1Z5sBAqwPk1q" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Colab</a>
+                      <a href="https://colab.research.google.com/drive/12VF-CNSg1GqvfHH3NgWc3ou5a00Cmor1#scrollTo=NJUgQYN7PcOK?authuser=0" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Colab</a>
                     </li>
                     <li>
                       <a href="https://www.kaggle.com/" target="_blank" rel="noopener noreferrer" className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15">Train on Kaggle</a>

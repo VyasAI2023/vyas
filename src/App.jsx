@@ -52,6 +52,7 @@ import ModelCNN from "./components/ModelCNN";
 import ConvolutionalNeuralNetworks from "./ConvolutionalNeuralNetworks";
 import RecurrentNeuralNetwork from "./RecurrentNeuralNetwork";
 import ModelGBM from "./components/ModelGBM";
+import BlogDetails from "./components/company/BlogDetails";
 
 function App() {
   return (
@@ -109,6 +110,7 @@ function App() {
         <Route path="/convolutionalneuralnetworks" element={<PrivateRoute><ConvolutionalNeuralNetworks/></PrivateRoute>} />
         <Route path="/recurrentneuralnetwork" element={<PrivateRoute><RecurrentNeuralNetwork/></PrivateRoute>} />
         <Route path='/modelgbm' element={<ModelGBM />} />
+        <Route path="/company/:blogId" element={<BlogDetails />} />
       </Routes>
     </AuthContextProvider>
   );
