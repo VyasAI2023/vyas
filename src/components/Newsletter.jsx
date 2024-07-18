@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import emailjs from 'emailjs-com';
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -126,7 +127,41 @@ const NetworkBackground = () => {
   return <canvas ref={canvasRef} style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }} />;
 };
 
+
 const Newsletter = () => {
+  const [email, setEmail] = useState('');
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleNotifyMeClick = () => {
+    // Replace with your EmailJS service ID, template ID, and user ID
+    const SERVICE_ID = 'service_k9ksl91';
+    const TEMPLATE_ID = 'template_uq8qsnr';
+    const USER_ID = 'EknKUDu0TTLV5UZGD';
+  
+    const templateParams = {
+      to_email: email,
+    };
+  
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
+      .then((response) => {
+        console.log('Email sent successfully:', response);
+        // Show a success message or popup
+        alert('Email sent successfully! Thank you for subscribing to our newsletter.');
+        // or use a notification library like react-toastify
+        // toast.success('Email sent successfully! Thank you for subscribing to our newsletter.');
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+        // Show an error message or popup
+        alert('Error sending email. Please try again later.');
+        // or use a notification library like react-toastify
+        // toast.error('Error sending email. Please try again later.');
+      });
+  };
+
   return (
     <div className="relative overflow-hidden">
       <NetworkBackground />
@@ -144,8 +179,13 @@ const Newsletter = () => {
                 className="p-3 flex w-full rounded-md bg-white text-black"
                 type="email"
                 placeholder="Enter Email"
+                value={email}
+                onChange={handleEmailChange}
               />
-              <button className="bg-[#00df9a] text-black rounded-md font-medium w-[200px] ml-4 my-6 px-6 py-3">
+              <button
+                className="bg-[#00df9a] text-black rounded-md font-medium w-[200px] ml-4 my-6 px-6 py-3"
+                onClick={handleNotifyMeClick}
+              >
                 Notify Me
               </button>
             </div>
