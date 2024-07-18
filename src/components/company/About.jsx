@@ -27,15 +27,24 @@ const About = () => {
       {/* Main Content */}
       <div className="relative z-20 max-w-[1000px] mx-auto p-4 mt-16">
         <div className="text-center">
-          <h2 className="text-5xl text-[rgb(0,223,154)] font-bold mb-4">Our Company</h2>
+          <h2 className="text-5xl text-[rgb(0,223,154)] font-bold mb-4">Our Mission - Empowering with MLaaS</h2>
           <hr className="mt-2 w-40 mx-auto border-t-2 border-[#00df9a]" />
         </div>
         <p className="text-2xl mb-6 text-white">
-          VyasAI empowers developers to build their own computer vision applications, no matter their skillset or experience. We streamline the process between labeling your data and training your model.
+          Vyas.AI is a cutting-edge platform that offers Machine Learning-as-a-Service (MLaaS), empowering businesses and researchers to harness the power of machine learning without the overhead of infrastructure management. Our platform not only facilitates the execution of research-level projects but also provides comprehensive training solutions tailored to your specific needs.
           <br/><br/>
+                               Features:
+          <ul className="list-disc pl-6">
+            <li>MLaaS: Access state-of-the-art machine learning algorithms and models through our easy-to-use API.</li>
+            <li>Research Projects: Take your research projects to completion with our platform's robust infrastructure and support.</li>
+            <li>Custom Training: Tailor-made training solutions designed to address your unique business challenges.</li>
+            <li>Scalability: Seamlessly scale your machine learning tasks to match your evolving requirements.</li>
+            <li>Security: Trust in our secure platform infrastructure to safeguard your data and models.</li>
+          </ul>
+          <br/>
           After building our own applications, we learned firsthand how tedious it can be to train and deploy a computer vision model. We found ourselves writing excess code to format our data. It was difficult to collaborate, and benchmarking machine learning tools was a lot of work.
           <br/><br/>
-          That’s why we launched vyas in January 2023. We believe every developer should have computer vision available in their toolkit. Our mission is to remove any barriers that might prevent them from succeeding.
+          That’s why we launched Vyas.AI in January 2023. We believe every developer should have computer vision available in their toolkit. Our mission is to remove any barriers that might prevent them from succeeding.
         </p>
       </div>
 
