@@ -8,139 +8,79 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useNavigate, useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 export const Blog = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    if (isFirstLoad) {
-      setIsFirstLoad(false);
-      // Perform any initial data fetch or setup here if needed
-    }
-  }, [isFirstLoad]);
+    // Fetch blogs from Firebase
+    axios.get('https://vyas-auth-default-rtdb.firebaseio.com/blogs.json')
+      .then((response) => {
+        const fetchedBlogs = [];
+        for (let key in response.data) {
+          fetchedBlogs.push({
+            id: key,
+            ...response.data[key]
+          });
+        }
+        setBlogs(fetchedBlogs);
+      })
+      .catch((error) => {
+        console.error('Error fetching blogs:', error);
+      });
+  }, []);
 
-  const handleSelect = (blog) => {
-    navigate(`/company/${blog}`);
+  const handleSelect = (blogId) => {
+    navigate(`/company/${blogId}`);
     window.scrollTo(0, 0);
   };
 
+  const handleAddBlog = () => {
+    navigate('/company/add');
+  };
+
   return (
-    <div className='container mx-auto px-4'>
+    <div className="container mx-auto px-4">
       <Navbar />
-      <div className='header text-center my-8'>
-        <div className='text text-3xl font-bold'>Blogs</div>
-        <div className='underline w-16 h-1 mx-auto my-2 bg-black'></div>
+      <div className="header text-center my-8">
+        <div className="text text-3xl font-bold">Blogs</div>
+        <div className="underline w-16 h-1 mx-auto my-2 bg-black"></div>
+        <Button variant="contained" color="primary" onClick={handleAddBlog}>
+          Add New Blog
+        </Button>
       </div>
-      <div className='card-container grid grid-cols-1 md:grid-cols-2 gap-8'>
-        <Card className='rounded-xl shadow-lg overflow-hidden'>
-          <CardMedia
-            component="img"
-            height="200"
-            image="https://miro.medium.com/v2/resize:fit:1358/0*euQhvApo72obOvIH.gif"
-            alt="Model Image"
-          />
-          <CardContent className='pt-4 pb-2'>
-            <Typography gutterBottom variant="h5" component="div" className='font-bold'>
-              Common Machine Learning Models with some examples.
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Uncover the magic behind intelligent applications - explore how these models power your digital world! Dive into the algorithms and methodologies that drive transformative technologies across industries.
-            </Typography>
-          </CardContent>
-          <CardActions className='justify-between px-4 pb-4'>
-            <div className='flex items-center text-gray-600'>
-              <time dateTime="2024-05-24" className="text-sm mr-2">July 5, 2024</time>
-              <div className="border-l-2 h-4 mx-2"></div>
-              <a className="text-sm" href="https://www.linkedin.com/in/hridyanshu-slathia">Hridyanshu Slathia BTech CSE</a>
-            </div>
-            <Button variant="contained" color="primary" onClick={() => handleSelect('blog1')}>
-              Read More
-            </Button>
-          </CardActions>
-        </Card>
-
-        <Card className='rounded-xl shadow-lg overflow-hidden'>
-          <CardMedia
-            component="img"
-            height="200"
-            image="https://miro.medium.com/v2/resize:fit:800/0*5oHGMhJcDAXOnuHv.gif"
-            alt="Model Image"
-          />
-          <CardContent className='pt-4 pb-2'>
-            <Typography gutterBottom variant="h5" component="div" className='font-bold'>
-              Unveiling the Power of Convolutional Neural Networks (CNNs)
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Dive into the world of CNNs, a revolutionary deep learning technique transforming computer vision! Explore how CNNs work, their applications in image recognition, object detection, and more.
-            </Typography>
-          </CardContent>
-          <CardActions className='justify-between px-4 pb-4'>
-            <div className='flex items-center text-gray-600'>
-              <time dateTime="2024-05-24" className="text-sm mr-2">July 5, 2024</time>
-              <div className="border-l-2 h-4 mx-2"></div>
-              <a className="text-sm" href="https://www.linkedin.com/in/vanshika-bakshi">Vanshika Bakshi BTech CSE</a>
-            </div>
-            <Button variant="contained" color="primary" onClick={() => handleSelect('blog2')}>
-              Read More
-            </Button>
-          </CardActions>
-        </Card>
-
-        <Card className='rounded-xl shadow-lg overflow-hidden'>
-          <CardMedia
-            component="img"
-            height="200"
-            image="https://media1.giphy.com/media/5k5vZwRFZR5aZeniqb/giphy.gif"
-            alt="New Blog Image"
-          />
-          <CardContent className='pt-4 pb-2'>
-            <Typography gutterBottom variant="h5" component="div" className='font-bold'>
-              Artificial Intelligence in Home Robots: Revolutionarizing Everyday Life
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Discover the future of AI and how it's reshaping industries and societies. Explore the latest advancements, ethical considerations, and potential impacts of AI technologies on our lives.
-            </Typography>
-          </CardContent>
-          <CardActions className='justify-between px-4 pb-4'>
-            <div className='flex items-center text-gray-600'>
-              <time dateTime="2024-07-06" className="text-sm mr-2">July 8, 2024</time>
-              <div className="border-l-2 h-4 mx-2"></div>
-              <a className="text-sm" href="https://www.linkedin.com/in/shagunmengi/">Shagun Mengi BTech CSE</a>
-            </div>
-            <Button variant="contained" color="primary" onClick={() => handleSelect('blog3')}>
-              Read More
-            </Button>
-          </CardActions>
-        </Card>
-
-        <Card className='rounded-xl shadow-lg overflow-hidden'>
-          <CardMedia
-            component="img"
-            height="200"
-            image="https://cdn.dribbble.com/users/31818/screenshots/2091618/dribbb.gif"
-            alt="NLP Image"
-          />
-          <CardContent className='pt-4 pb-2'>
-            <Typography gutterBottom variant="h5" component="div" className='font-bold'>
-              Comprehensive Overview of Natural Language Processing (NLP)
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Delve into the fascinating world of Natural Language Processing (NLP) and its role in making computers understand and generate human language. Explore the techniques, applications, and future trends that are revolutionizing how we interact with technology.
-            </Typography>
-          </CardContent>
-          <CardActions className='justify-between px-4 pb-4'>
-            <div className='flex items-center text-gray-600'>
-              <time dateTime="2024-07-08" className="text-sm mr-2">July 8, 2024</time>
-              <div className="border-l-2 h-4 mx-2"></div>
-              <a className="text-sm" href="https://www.linkedin.com/in/anirudh-salaria-0953b1247/">Anirudh Salaria BTech CSE</a>
-            </div>
-            <Button variant="contained" color="primary" onClick={() => handleSelect('blog4')}>
-              Read More
-            </Button>
-          </CardActions>
-        </Card>
+      <div className="card-container grid grid-cols-1 md:grid-cols-2 gap-8">
+        {blogs.map((blog) => (
+          <Card key={blog.id} className="rounded-xl shadow-lg overflow-hidden">
+            <CardMedia component="img" height="200" image={blog.gifUrl} alt="GIF" />
+            <CardContent className="pt-4 pb-2">
+              <Typography gutterBottom variant="h5" component="div" className="font-bold">
+                {blog.name}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                <a href={`https://www.linkedin.com/in/${blog.linkedin}`} target="_blank" rel="noopener noreferrer">
+                  {blog.name}
+                </a>
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {blog.date}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="div" className="font-bold">
+                {blog.title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {blog.summary}
+              </Typography>
+            </CardContent>
+            <CardActions className="justify-between px-4 pb-4">
+              <Button variant="contained" color="primary" onClick={() => handleSelect(blog.id)}>
+                Read More
+              </Button>
+            </CardActions>
+          </Card>
+        ))}
       </div>
       <Footer />
     </div>
