@@ -16,6 +16,7 @@ const modelData = [
     description: "A linear approach to modeling the relationship between a dependent variable and one or more independent variables, where the prediction is a continuous value.",
     image: "https://img.icons8.com/?size=100&id=fuVH5gdie8Za&format=png&color=000000",
     category: "Regression",
+    link:"/modellinearregression"
   },
   {
     title: "Logistic Regression",
@@ -35,10 +36,11 @@ const modelData = [
     title: "Random Forest",
     description: "An ensemble learning method that operates by constructing multiple decision trees.",
     image: "https://img.icons8.com/?size=100&id=97384&format=png&color=000000",
-    category: "Classification"
+    category: "Classification",
+    link: '/modelrandomforest'
   },
   {
-    title: "Support Vector Machine",
+    title: "Support Vector Machine (SVM)",
     description: "A supervised learning model that analyzes data for classification and regression analysis.",
     image: "https://img.icons8.com/?size=100&id=6nsw3h9gk8M8&format=png&color=000000",
     category: "Classification",
@@ -55,19 +57,23 @@ const modelData = [
     title: "Naive Bayes",
     description: "A family of simple probabilistic classifiers based on applying Bayes' theorem.",
     image: "https://img.icons8.com/?size=100&id=44804&format=png&color=000000",
-    category: "Classification"
+    category: "Classification",
+    link: '/modelnaivebayes'
   },
   {
-    title: "Principal Component Analysis",
+    title: "Principal Component Analysis (PCA)",
     description: "A technique for reducing the dimensionality of datasets, increasing interpretability but at the same time minimizing information loss.",
     image: "https://img.icons8.com/?size=100&id=PvvcWRWxRKSR&format=png&color=000000",
-    category: "Dimensionality Reduction"
+    category: "Dimensionality Reduction",
+    link: '/modelpca'
   },
+  
   {
     title: "Gradient Boosting Machines (GBM)",
     description: "A machine learning technique for regression and classification problems, which builds a model in a stage-wise fashion.",
     image: "https://img.icons8.com/?size=100&id=kHa374LPzAvu&format=png&color=228BE6",
-    category: "Classification"
+    category: "Classification",
+    link: '/modelgbm'
   },
   {
     title: "Neural Networks (Deep Learning)",
@@ -79,13 +85,15 @@ const modelData = [
     title: "Convolutional Neural Networks (CNN)",
     description: "A class of deep neural networks, most commonly applied to analyzing visual imagery.",
     image: "https://img.icons8.com/?size=100&id=yjSFO4TGzhsn&format=png&color=000000",
-    category: "Object Detection"
+    category: "Object Detection",
+    link: '/modelcnn'
   },
   {
-    title: "Recurrent Neural Networks",
+    title: "Recurrent Neural Networks (RNN)",
     description: "A class of artificial neural networks where connections between nodes can create a cycle, allowing output from some nodes to affect subsequent input to the same nodes.",
     image: "https://img.icons8.com/?size=100&id=Ja6N9gQK99nM&format=png&color=228BE6",
-    category: "Vision-Language"
+    category: "Vision-Language",
+    link: '/modelrnn'
   },
   {
     title: "Long Short-Term Memory networks (LSTM)",
