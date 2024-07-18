@@ -16,7 +16,6 @@ const AddBlog = () => {
     content: '',
     date: '',
     image: '',
-    authorImage: '',
     gifUrl: ''
   });
 
@@ -115,7 +114,7 @@ const AddBlog = () => {
           sx={styles.textField}
         />
         <TextField
-        //   label="Date"
+          // label="Date"
           name="date"
           value={blogData.date}
           onChange={handleChange}
@@ -132,19 +131,6 @@ const AddBlog = () => {
           label="Blog Image URL"
           name="image"
           value={blogData.image}
-          onChange={handleChange}
-          fullWidth
-          margin="normal"
-          variant="outlined"
-          required
-          InputLabelProps={{ style: styles.inputLabel }}
-          InputProps={{ style: styles.input }}
-          sx={styles.textField}
-        />
-        <TextField
-          label="Author Image URL"
-          name="authorImage"
-          value={blogData.authorImage}
           onChange={handleChange}
           fullWidth
           margin="normal"
@@ -173,7 +159,7 @@ const AddBlog = () => {
           </Button>
         </div>
       </form>
-      <Footer />
+      <Footer/>
     </div>
   );
 };
@@ -213,7 +199,7 @@ const styles = {
     backgroundColor: '#333333',
   },
   textField: {
-    '& .MuiOutlinedInput-root': {
+    '&.MuiOutlinedInput-root': {
       '& fieldset': {
         borderColor: '#666666',
       },
