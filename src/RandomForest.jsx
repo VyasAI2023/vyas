@@ -3,7 +3,7 @@ import Papa from 'papaparse';
 import Footer from './components/Footer.jsx';
 import Navbar from './components/Navbar.jsx';
 
-const KNearestNeighbors = () => {
+const RandomForest = () => {
   const [error, setError] = useState('');
   const [data, setData] = useState([]);
   const [totalColumns, setTotalColumns] = useState(0);
@@ -57,16 +57,16 @@ const KNearestNeighbors = () => {
         <div className='box border border-slate-900 rounded-xl p-6 text-white cursor-pointer hover:scale-105 shadow-xl shadow-slate-900 ease-out duration-300'>
           <div className='flex gap-6 justify-center'>
             <div className='my-auto'>
-              <img src="https://img.icons8.com/?size=100&id=44804&format=png&color=000000" alt="" />
+              <img src="https://img.icons8.com/?size=100&id=97384&format=png&color=000000" alt="" />
             </div>
-            <div className='font-semibold text-6xl'>K-Nearest Neighbors Model</div>
+            <div className='font-semibold text-6xl'>Random Forest Model</div>
           </div>
           <div className='mt-2 text-slate-400 text-center'>
-            A non-parametric supervised learning method used for classification and regression tasks. It predicts the label of a data point based on the majority label of its K nearest neighbors.
+            A supervised learning method that constructs a multitude of decision trees during training and outputs the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees.
           </div>
           <div className='flex justify-center mt-4'>
             <div className='p-1 text-xs font-semibold text-slate-400 border rounded-full'>
-              CLASSIFICATION
+              CLASSIFICATION & REGRESSION
             </div>
           </div>
         </div>
@@ -80,9 +80,10 @@ const KNearestNeighbors = () => {
               <div className='font-semibold text-3xl'>Key Concepts</div>
             </div>
             <ul className='mt-2 text-slate-400 list-disc pl-5'>
-              <li>Distance Metric: Measures the similarity between data points.</li>
-              <li>K-Value: Number of nearest neighbors used to make predictions.</li>
-              <li>Weighting Scheme: Defines how much influence each neighbor has on the prediction.</li>
+              <li>Ensemble Method: Aggregates multiple decision trees to improve accuracy and robustness.</li>
+              <li>Bootstrap Sampling: Randomly samples data with replacement to train each tree.</li>
+              <li>Feature Importance: Measures how effective each feature is for improving classification.</li>
+              <li>Hyperparameters: Number of trees, depth of trees, and minimum samples per leaf.</li>
             </ul>
           </div>
 
@@ -94,10 +95,10 @@ const KNearestNeighbors = () => {
               <div className='font-semibold text-3xl'>Applications</div>
             </div>
             <ul className='mt-2 text-slate-400 list-disc pl-5'>
-              <li>Recommender Systems: Suggesting items based on user preferences.</li>
-              <li>Medical Diagnosis: Predicting disease based on symptoms.</li>
-              <li>Image Recognition: Identifying objects in images.</li>
-              <li>Finance: Predicting stock prices.</li>
+              <li>Finance: Fraud detection and stock market prediction.</li>
+              <li>Healthcare: Disease diagnosis and patient outcome prediction.</li>
+              <li>E-commerce: Product recommendation and customer segmentation.</li>
+              <li>Environment: Species classification and ecological modeling.</li>
             </ul>
           </div>
 
@@ -109,9 +110,9 @@ const KNearestNeighbors = () => {
               <div className='font-semibold text-3xl'>Advantages</div>
             </div>
             <ul className='mt-2 text-slate-400 list-disc pl-5'>
-              <li>Simple: Easy to implement and understand.</li>
-              <li>No Training Phase: Directly uses the training data for prediction.</li>
-              <li>Non-Parametric: Makes no assumptions about the underlying data distribution.</li>
+              <li>High Accuracy: Combines multiple weak models to achieve better results.</li>
+              <li>Robust: Less prone to overfitting compared to individual decision trees.</li>
+              <li>Versatile: Can handle both classification and regression tasks.</li>
             </ul>
           </div>
 
@@ -123,9 +124,8 @@ const KNearestNeighbors = () => {
               <div className='font-semibold text-3xl'>Limitations</div>
             </div>
             <ul className='mt-2 text-slate-400 list-disc pl-5'>
-              <li>Computationally Expensive: Needs to compute distances to all training samples.</li>
-              <li>Sensitive to Noise: Outliers or noisy data can significantly affect predictions.</li>
-              <li>Optimal K-Value: Selection of the right K can impact model performance.</li>
+              <li>Complexity: Can be computationally expensive and difficult to interpret.</li>
+              <li>Training Time: Slower training time compared to simpler models.</li>
             </ul>
           </div>
         </div>
@@ -159,7 +159,7 @@ const KNearestNeighbors = () => {
                 </thead>
                 <tbody>
                   {data.map((row, index) => (
-                    <tr key={index} style={{ backgroundColor: index % 2 === 0 ? '#333333' : '#444444' }}>
+                    <tr key={index}>
                       {Object.values(row).map((cell, index) => (
                         <td key={index} style={{ border: '1px solid #00df9a', padding: '8px', color: '#ffffff' }}>{cell}</td>
                       ))}
@@ -170,10 +170,16 @@ const KNearestNeighbors = () => {
             </div>
           </div>
         )}
+        {modelTrained && (
+          <div className='text-slate-400 mt-6' style={{ fontSize: '1.1em' }}>
+            <p>Random Forest model trained successfully!</p>
+            {/* You can add more visualization or output here */}
+          </div>
+        )}
       </div>
       <Footer />
     </div>
   );
 };
 
-export default KNearestNeighbors;
+export default RandomForest;

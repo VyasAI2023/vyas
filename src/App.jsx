@@ -36,6 +36,22 @@ import ForgotPassword from "./components/ForgotPassword";
 import PrivateRoute from "./PrivateRoute";
 import { AuthContextProvider } from "./AuthContext";
 import MainPage from "./components/MainPage";
+import AddBlog from "./components/company/AddBlog";
+import LinearRegression from "./LinearRegression";
+import RandomForest from "./RandomForest";
+import NaiveBayes from "./NaiveBayes";
+import PCA from "./PCA";
+import GBM from "./GBM";
+import NeuralNetworks from "./NeuralNetworks";
+import ModelRNN from "./components/ModelRNN";
+import ModelLinearRegression from "./components/ModelLinearRegression";
+import ModelRandomForest from "./components/ModelRandomForest";
+import ModelNaiveBayes from "./components/ModelNaiveBayes";
+import ModelPCA from "./components/ModelPCA";
+import ModelCNN from "./components/ModelCNN";
+import ConvolutionalNeuralNetworks from "./ConvolutionalNeuralNetworks";
+import RecurrentNeuralNetwork from "./RecurrentNeuralNetwork";
+import ModelGBM from "./components/ModelGBM";
 
 function App() {
   return (
@@ -57,6 +73,7 @@ function App() {
         <Route path="/company/blog2" element={<Blog2 />} />
         <Route path="/company/blog3" element={<Blog3 />} />
         <Route path="/company/blog4" element={<Blog4 />} />
+        <Route path="/company/add" element={<AddBlog />} /> {/* Add this route */}
         <Route path="/company/careers" element={<Career />} />
         <Route path="/company/jobs" element={<Jobs />} />
         <Route path="/policy" element={<Policy />} />
@@ -76,6 +93,22 @@ function App() {
         <Route path="/claim" element={<PrivateRoute><Claim /></PrivateRoute>} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/main" element={<MainPage />} />
+        <Route path="/company/add" element={<AddBlog/>} />
+        <Route path="/linearregression" element={<PrivateRoute><LinearRegression /></PrivateRoute>} />
+        <Route path="/randomforest" element={<PrivateRoute><RandomForest /></PrivateRoute>} />
+        <Route path="/naivebayes" element={<PrivateRoute><NaiveBayes /></PrivateRoute>} />
+        <Route path="/pca" element={<PrivateRoute><PCA /></PrivateRoute>} />
+        <Route path="/gbm" element={<PrivateRoute><GBM /></PrivateRoute>} />
+        <Route path="/neuralnetworks" element={<PrivateRoute><NeuralNetworks /></PrivateRoute>} />
+        <Route path='/modelrnn' element={<ModelRNN />} />
+        <Route path='/modellinearregression' element={<ModelLinearRegression />} />
+        <Route path='/modelrandomforest' element={<ModelRandomForest />} />
+        <Route path='/modelnaivebayes' element={<ModelNaiveBayes />} />
+        <Route path='/modelpca' element={<ModelPCA />} />
+        <Route path='/modelcnn' element={<ModelCNN />} />
+        <Route path="/convolutionalneuralnetworks" element={<PrivateRoute><ConvolutionalNeuralNetworks/></PrivateRoute>} />
+        <Route path="/recurrentneuralnetwork" element={<PrivateRoute><RecurrentNeuralNetwork/></PrivateRoute>} />
+        <Route path='/modelgbm' element={<ModelGBM />} />
       </Routes>
     </AuthContextProvider>
   );

@@ -3,7 +3,7 @@ import Papa from 'papaparse';
 import Footer from './components/Footer.jsx';
 import Navbar from './components/Navbar.jsx';
 
-const KNearestNeighbors = () => {
+const ConvolutionalNeuralNetworks = () => {
   const [error, setError] = useState('');
   const [data, setData] = useState([]);
   const [totalColumns, setTotalColumns] = useState(0);
@@ -57,16 +57,16 @@ const KNearestNeighbors = () => {
         <div className='box border border-slate-900 rounded-xl p-6 text-white cursor-pointer hover:scale-105 shadow-xl shadow-slate-900 ease-out duration-300'>
           <div className='flex gap-6 justify-center'>
             <div className='my-auto'>
-              <img src="https://img.icons8.com/?size=100&id=44804&format=png&color=000000" alt="" />
+              <img src="https://img.icons8.com/?size=100&id=QlqmfUp2xkCq&format=png&color=000000" alt="" />
             </div>
-            <div className='font-semibold text-6xl'>K-Nearest Neighbors Model</div>
+            <div className='font-semibold text-6xl'>Convolutional Neural Networks</div>
           </div>
           <div className='mt-2 text-slate-400 text-center'>
-            A non-parametric supervised learning method used for classification and regression tasks. It predicts the label of a data point based on the majority label of its K nearest neighbors.
+            A class of deep neural networks, most commonly applied to analyzing visual imagery.
           </div>
           <div className='flex justify-center mt-4'>
             <div className='p-1 text-xs font-semibold text-slate-400 border rounded-full'>
-              CLASSIFICATION
+              IMAGE CLASSIFICATION
             </div>
           </div>
         </div>
@@ -80,9 +80,10 @@ const KNearestNeighbors = () => {
               <div className='font-semibold text-3xl'>Key Concepts</div>
             </div>
             <ul className='mt-2 text-slate-400 list-disc pl-5'>
-              <li>Distance Metric: Measures the similarity between data points.</li>
-              <li>K-Value: Number of nearest neighbors used to make predictions.</li>
-              <li>Weighting Scheme: Defines how much influence each neighbor has on the prediction.</li>
+              <li>Convolution Layers: Filters that help detect patterns in images.</li>
+              <li>Pooling Layers: Reducing the dimensionality of the feature maps.</li>
+              <li>ReLU Activation: Introducing non-linearity into the model.</li>
+              <li>Fully Connected Layers: Connecting neurons from one layer to every neuron in the next layer.</li>
             </ul>
           </div>
 
@@ -94,10 +95,10 @@ const KNearestNeighbors = () => {
               <div className='font-semibold text-3xl'>Applications</div>
             </div>
             <ul className='mt-2 text-slate-400 list-disc pl-5'>
-              <li>Recommender Systems: Suggesting items based on user preferences.</li>
-              <li>Medical Diagnosis: Predicting disease based on symptoms.</li>
-              <li>Image Recognition: Identifying objects in images.</li>
-              <li>Finance: Predicting stock prices.</li>
+              <li>Image Classification: Assigning labels to images.</li>
+              <li>Object Detection: Identifying objects in images.</li>
+              <li>Image Segmentation: Dividing images into segments.</li>
+              <li>Face Recognition: Identifying individuals in images.</li>
             </ul>
           </div>
 
@@ -109,9 +110,9 @@ const KNearestNeighbors = () => {
               <div className='font-semibold text-3xl'>Advantages</div>
             </div>
             <ul className='mt-2 text-slate-400 list-disc pl-5'>
-              <li>Simple: Easy to implement and understand.</li>
-              <li>No Training Phase: Directly uses the training data for prediction.</li>
-              <li>Non-Parametric: Makes no assumptions about the underlying data distribution.</li>
+              <li>High Accuracy: Excellent performance on visual data.</li>
+              <li>Feature Extraction: Automatically extracts relevant features.</li>
+              <li>Scalability: Works well with large datasets.</li>
             </ul>
           </div>
 
@@ -123,9 +124,9 @@ const KNearestNeighbors = () => {
               <div className='font-semibold text-3xl'>Limitations</div>
             </div>
             <ul className='mt-2 text-slate-400 list-disc pl-5'>
-              <li>Computationally Expensive: Needs to compute distances to all training samples.</li>
-              <li>Sensitive to Noise: Outliers or noisy data can significantly affect predictions.</li>
-              <li>Optimal K-Value: Selection of the right K can impact model performance.</li>
+              <li>Computationally Intensive: Requires significant computational resources.</li>
+              <li>Large Data Requirement: Needs large amounts of labeled data.</li>
+              <li>Complexity: More complex to design and train compared to traditional algorithms.</li>
             </ul>
           </div>
         </div>
@@ -152,16 +153,16 @@ const KNearestNeighbors = () => {
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '1.1em' }}>
                 <thead style={{ position: 'sticky', top: 0, backgroundColor: '#00df9a', zIndex: 1 }}>
                   <tr>
-                    {Object.keys(data[0]).map((header, index) => (
-                      <th key={index} style={{ border: '1px solid #00df9a', padding: '8px', color: '#ffffff', textAlign: 'left' }}>{header}</th>
+                    {Object.keys(data[0]).map((column) => (
+                      <th key={column} style={{ border: '1px solid #00df9a', padding: '8px', textAlign: 'left', whiteSpace: 'nowrap' }}>{column}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map((row, index) => (
-                    <tr key={index} style={{ backgroundColor: index % 2 === 0 ? '#333333' : '#444444' }}>
-                      {Object.values(row).map((cell, index) => (
-                        <td key={index} style={{ border: '1px solid #00df9a', padding: '8px', color: '#ffffff' }}>{cell}</td>
+                  {data.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      {Object.values(row).map((value, columnIndex) => (
+                        <td key={columnIndex} style={{ border: '1px solid #00df9a', padding: '8px', textAlign: 'left', whiteSpace: 'nowrap' }}>{value}</td>
                       ))}
                     </tr>
                   ))}
@@ -170,10 +171,11 @@ const KNearestNeighbors = () => {
             </div>
           </div>
         )}
+        {modelTrained && <p style={{ color: '#00df9a', marginTop: '10px', textAlign: 'center', fontSize: '1.2em', fontWeight: 'bold' }}>Model training completed!</p>}
       </div>
       <Footer />
     </div>
   );
 };
 
-export default KNearestNeighbors;
+export default ConvolutionalNeuralNetworks;

@@ -52,6 +52,7 @@ const Profile = () => {
       name: 'Linear Regression',
       description: 'Predict continuous values based on independent variables using a straight-line relationship.',
       iconUrl: 'https://img.icons8.com/?size=100&id=fuVH5gdie8Za&format=png&color=000000',
+      link: '/linearregression'
     },
     {
       name: 'Logistic Regression',
@@ -68,7 +69,8 @@ const Profile = () => {
     {
       name: 'Random Forest',
       description: 'Combine multiple decision trees to improve accuracy and avoid overfitting.',
-      iconUrl: 'https://img.icons8.com/?size=100&id=97384&format=png&color=000000'
+      iconUrl: 'https://img.icons8.com/?size=100&id=97384&format=png&color=000000',
+      link: '/randomforest'
     },
     {
       name: 'Support Vector Machine (SVM)',
@@ -85,32 +87,38 @@ const Profile = () => {
     {
       name: 'Naive Bayes',
       description: 'Use probabilities and Bayes\' theorem to predict the class of an object based on its attributes.',
-      iconUrl: 'https://img.icons8.com/?size=100&id=PvvcWRWxRKSR&format=png&color=000000'
+      iconUrl: 'https://img.icons8.com/?size=100&id=PvvcWRWxRKSR&format=png&color=000000',
+      link: '/naivebayes'
     },
     {
       name: 'Principal Component Analysis (PCA)',
       description: 'Reduce the complexity of high-dimensional data while retaining its essential features.',
-      iconUrl: 'https://img.icons8.com/?size=100&id=yjSFO4TGzhsn&format=png&color=000000'
+      iconUrl: 'https://assets-global.website-files.com/5e6f9b297ef3941db2593ba1/5f76ef7799e20652be0d79f6_Screenshot%202020-10-02%20at%2011.12.32.png',
+      link: '/pca'
     },
     {
       name: 'Gradient Boosting Machines (GBM)',
       description: 'Build predictive models by combining the outputs of many weak learners in a sequential manner.',
-      iconUrl: 'https://img.icons8.com/?size=100&id=JSnLFBKCt9En&format=png&color=000000'
+      iconUrl: 'https://img.icons8.com/?size=100&id=JSnLFBKCt9En&format=png&color=000000',
+      link: '/gbm'
     },
     {
       name: 'Neural Networks (Deep Learning)',
       description: 'Mimic the human brain to recognize patterns and make decisions based on vast amounts of data.',
-      iconUrl: 'https://img.icons8.com/?size=100&id=kHa374LPzAvu&format=png&color=228BE6'
+      iconUrl: 'https://img.icons8.com/?size=100&id=kHa374LPzAvu&format=png&color=228BE6',
+      link: '/neuralnetworks'
     },
     {
       name: 'Convolutional Neural Networks (CNN)',
       description: 'Specialize in processing and analyzing visual data such as images and videos.',
-      iconUrl: 'https://img.icons8.com/?size=100&id=QlqmfUp2xkCq&format=png&color=000000'
+      iconUrl: 'https://img.icons8.com/?size=100&id=QlqmfUp2xkCq&format=png&color=000000',
+      link: '/convolutionalneuralnetworks'
     },
     {
       name: 'Recurrent Neural Networks (RNN)',
       description: 'Process sequences of data by retaining memory of previous inputs.',
-      iconUrl: 'https://img.icons8.com/?size=100&id=Ja6N9gQK99nM&format=png&color=000000'
+      iconUrl: 'https://img.icons8.com/?size=100&id=Ja6N9gQK99nM&format=png&color=000000',
+      link: '/recurrentneuralnetwork'
     },
     {
       name: 'Long Short-Term Memory networks (LSTM)',
