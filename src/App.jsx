@@ -36,7 +36,6 @@ import ForgotPassword from "./components/ForgotPassword";
 import PrivateRoute from "./PrivateRoute";
 import { AuthContextProvider } from "./AuthContext";
 import MainPage from "./components/MainPage";
-import AddBlog from "./components/company/AddBlog";
 import LinearRegression from "./LinearRegression";
 import RandomForest from "./RandomForest";
 import NaiveBayes from "./NaiveBayes";
@@ -93,7 +92,6 @@ function App() {
         <Route path="/claim" element={<PrivateRoute><Claim /></PrivateRoute>} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/main" element={<MainPage />} />
-        <Route path="/company/add" element={<AddBlog/>} />
         <Route path="/linearregression" element={<PrivateRoute><LinearRegression /></PrivateRoute>} />
         <Route path="/randomforest" element={<PrivateRoute><RandomForest /></PrivateRoute>} />
         <Route path="/naivebayes" element={<PrivateRoute><NaiveBayes /></PrivateRoute>} />
