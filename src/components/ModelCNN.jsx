@@ -72,7 +72,7 @@ const ModelCNN = () => {
                   <ul className="ml-2 space-y-2">
                     <li>
                       <a
-                        href="https://colab.research.google.com"
+                        href="https://colab.research.google.com/drive/1l08ccdFc_qmJEx5-xyEnIdtdeLSMDYvf#scrollTo=mkoRHQzUK1g7?authuser=0"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block py-2 pl-4 text-lg text-white hover:text-green-500 hover:bg-blue-800 hover:bg-opacity-15"
