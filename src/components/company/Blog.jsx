@@ -60,7 +60,7 @@ export const Blog = () => {
                 {blog.name}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                <a href={`https://${blog.linkedin}`} target="_blank" rel="noopener noreferrer">
+                <a href={`https://www.${blog.linkedin}`} target="_blank" rel="noopener noreferrer">
                   {blog.name}
                 </a>
               </Typography>
