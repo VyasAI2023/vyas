@@ -8,49 +8,49 @@ const jobList = [
     title: "Full Stack Universe Engineer",
     location: "Remote",
     department: "Engineering",
-    link: "https://forms.gle/TPtuYinBXjsoFZ277", // Replace with your actual form URL
+    link: "https://forms.gle/TPtuYinBXjsoFZ277?authuser=0", // Replace with your actual form URL
   },
   {
     title: "Account Executive",
     location: "Remote",
     department: "Sales",
-    link: "https://forms.gle/TPtuYinBXjsoFZ277",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277?authuser=0",
   },
   {
     title: "Applied Machine Learning Research Engineer",
     location: "Remote",
     department: "Engineering",
-    link: "https://forms.gle/TPtuYinBXjsoFZ277",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277?authuser=0",
   },
   {
     title: "Field Engineer",
     location: "Remote",
     department: "Customer Success",
-    link: "https://forms.gle/TPtuYinBXjsoFZ277",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277?authuser=0",
   },
   {
     title: "Full Stack Engineer",
     location: "Remote",
     department: "Engineering",
-    link: "https://forms.gle/TPtuYinBXjsoFZ277",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277?authuser=0",
   },
   {
     title: "Sales Development Representative",
     location: "Remote",
     department: "Sales",
-    link: "https://forms.gle/TPtuYinBXjsoFZ277",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277?authuser=0",
   },
   {
     title: "Former Founders",
     location: "Remote",
     department: "General Inquiry",
-    link: "https://forms.gle/TPtuYinBXjsoFZ277",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277?authuser=0",
   },
   {
     title: "Full Stack Machine Learning Engineer",
     location: "Remote",
     department: "Engineering",
-    link: "https://forms.gle/TPtuYinBXjsoFZ277",
+    link: "https://forms.gle/TPtuYinBXjsoFZ277?authuser=0",
   },
 ];
 
